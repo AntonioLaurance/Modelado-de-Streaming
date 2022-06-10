@@ -1,48 +1,46 @@
+#ifndef __VIDEO
+#define __VIDEO
+
 #pragma once
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-struct Time{
-	int hours;
-	int minutes;
-	short float seconds;
-}
-
-typedef struct Time Time;
-
 class Video
 {
-	private:
-		long unsigned int ID;
+	protected:
+		string ID;
 		string name;
-		Time duration;
-		char genre;
-		short float status;
+		int duration;
+		string genre;
+		float rating;
+		int raters; 
 
 	public:
 		// Constructor & Destructor
-		Video(long unsigned int ID, string name, Time duration, char genre, short float status = -1);
-		Video(long unsigned int ID, string name, Time duration, string genre, short float status = -1);
+		Video();
+		Video(string ID, string name, int duration, string genre, float rating, int raters);
 		~Video();
 
 		// Getters
-		long unsigned int getID();
+		string getID();
 		string getName();
-		Time getDuration();
-		char getGenre();
-		short float getStatus();
+		int getDuration();
+		string getGenre();
+		float getRating();
+		int getRaters();
 
 		// Setters 
-		void setID(long unsigned int ID);
+		void setID(string ID);
 		void setName(string name);
-		void setDuration(Time duration);
-		void setGenre(char genre);
+		void setDuration(int duration);
 		void setGenre(string genre);
-		void setStatus(short float status);
+		void setRating(float rating);
+		void setRaters(int raters);
 
 		// Other functions 
-		virtual string toString();
+		virtual string toString() = 0;
 };
 
+#endif
