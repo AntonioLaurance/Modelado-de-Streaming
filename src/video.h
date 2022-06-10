@@ -7,7 +7,6 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 struct ID{
 	char type;
 	int number;
@@ -21,12 +20,6 @@ class Video
 {
 	protected:
 		ID identifier;
-=======
-class Video
-{
-	protected:
-		string ID;
->>>>>>> refs/remotes/origin/main
 		string name;
 		int duration;
 		string genre;
@@ -59,8 +52,4 @@ class Video
 		virtual string toString() = 0;
 };
 
-<<<<<<< HEAD
 #endif
-=======
-#endif
->>>>>>> refs/remotes/origin/main
