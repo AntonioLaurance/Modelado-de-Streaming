@@ -1,4 +1,4 @@
-s#ifndef __MOVIE
+#ifndef __MOVIE
 #define __MOVIE
 
 #pragma once
