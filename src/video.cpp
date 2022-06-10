@@ -1,39 +1,29 @@
 #include "video.h"
 
-Video::Video(long unsigned int ID, string name, Time duration, char genre, int status)
+Video::Video(){
+	ID = "";
+	name = "";
+	duration = 0;	
+	genre = "";
+	rating = 0;
+	raters = 0;
+}
+
+Video::Video(string ID, string name, int duration, string genre, float rating, int raters)
 {
 	this -> ID = ID;
 	this -> name = name;
 	this -> duration = duration;	
 	this -> genre = genre;
-	this -> status = status;
+	this -> rating = rating;
+	this -> raters = raters;
 }
 
-Video::Video(long unsigned int ID, string name, Time duration, string genre, int status)
-{
-	this -> ID = ID;
-	this -> name = name;
-	this -> duration = duration;
-	this -> genre = genre;
-
-	if(genre == "Drama" || genre == "drama" || genre == "D" || genre == "d")
-		this -> genre = 'D';
-	else if(genre == "Acción" || genre == "Accion" || genre == "acción" || genre == "accion" || genre == "A" || genre = "a")
-		this -> genre = 'A';
-	else if(genre == "Misterio" || genre == "misterio" || genre == "M" || genre == "m")
-		this -> genre = 'M';
-	else
-		this -> genre = 'O';	// Other 
-
-	this -> status = status;	
+Video::~Video(){
+	; // Null statement
 }
 
-Video::~Video()
-{
-	; // NULL statement 
-}
-
-long unsigned int Video::getID()
+string Video::getID()
 {
 	return ID;
 }
@@ -43,22 +33,25 @@ string Video::getName()
 	return name;
 }
 
-Time Video::getDuration()
+int Video::getDuration()
 {
 	return duration;
 }
 
-char Video::getGenre()
+string Video::getGenre()
 {
 	return genre;
 }
 
-short float Video::getStatus()
-{
-	return status;
+float Video::getRating(){
+	return rating;
 }
 
-void Video::setID(long unsigned int ID)
+int Video::getRaters(){
+	return raters;
+}
+
+void Video::setID(string ID)
 {
 	this -> ID = ID;
 }
@@ -68,35 +61,20 @@ void Video::setName(string name)
 	this -> name = name;
 }
 
-void Video::setDuration(Time duration)
+void Video::setDuration(int duration)
 {
 	this -> duration = duration;
 }
 
-void Video::setGenre(char genre)
+void Video::setGenre(string genre)
 {
 	this -> genre = genre;
 }
 
-void Video::setGenre(string genre)
-{
-	if(genre == "Drama" || genre == "drama" || genre == "D" || genre == "d")
-		this -> genre = 'D';
-	else if(genre == "Acción" || genre == "Accion" || genre == "acción" || genre == "accion" || genre == "A" || genre = "a")
-		this -> genre = 'A';
-	else if(genre == "Misterio" || genre == "misterio" || genre == "M" || genre == "m")
-		this -> genre = 'M';
-	else
-		this -> genre = 'O';  // Other 
+void Video::setRating(float rating){
+	this -> rating = rating;
 }
 
-void Video::setStatus(short float status)
-{
-	this -> status = status;
+void Video::setRaters(int raters){
+	this -> raters = raters;
 }
-
-string Video::toString()
-{
-
-}
-

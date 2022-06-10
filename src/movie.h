@@ -1,14 +1,19 @@
+#ifndef __MOVIE
+#define __MOVIE
+
+#pragma once
 #include "video.h"
 
 class Movie: public Video
 {
     public:
         // Constructors & Destructor 
-        Movie(long unsigned int ID, string name, Time duration, char genre, short float status = -1);
-	Movie(long unsigned int ID, string name, Time duration, string genre, short float status = -1);
+        Movie();
+        Movie(string ID, string name, int duration, string genre, float rating, int raters);
         ~Movie();
 
         // Overriding method
         string toString();     
 };
 
+#endif
