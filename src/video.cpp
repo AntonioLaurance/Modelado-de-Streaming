@@ -30,7 +30,7 @@ Video::Video(long unsigned int ID, string name, Time duration, string genre, int
 
 Video::~Video()
 {
-
+	; // NULL statement 
 }
 
 long unsigned int Video::getID()

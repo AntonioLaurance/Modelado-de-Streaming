@@ -4,20 +4,12 @@
 
 using namespace std;
 
-struct Time{
-	int hours;
-	int minutes;
-	short float seconds;
-}
-
-typedef struct Time Time;
-
 class Video
 {
 	private:
 		long unsigned int ID;
 		string name;
-		Time duration;
+		short unsigned int duration;
 		char genre;
 		short float status;
 
