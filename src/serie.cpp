@@ -1,14 +1,20 @@
 #include "serie.h"
 
-Serie::Serie()
+Serie::Serie() : Video()
 {
     seasons = 0;
 }
 
-Serie::Serie(vector<vector<Episode*> > episodes, int seasons)
+Serie::Serie(string ID, string name, string genre,  vector<vector<Episode*> > episodes) : Video()
 {
     this -> episodes = episodes;
-    this -> seasons = seasons;
+    seasons = episodes.size();
+    setID(ID);
+    setName(name);
+    setDuration(totalDuration());
+    setGenre(genre);
+    setRating(averageRating());
+    setRaters(totalRaters());
 }
 
 Serie::~Serie()
@@ -19,7 +25,7 @@ Serie::~Serie()
 string Serie::toString()
 {
     string txt = "";
-    txt += "[*] " + episodes[0][0]->getName() + "\n";
+    txt += "[*] " + name + "\n";
     vector<vector<Episode*> >::iterator itSeasons;
     vector<Episode*>::iterator itEpisodes;
     for(itSeasons = episodes.begin(); itSeasons != episodes.end(); itSeasons++){
@@ -31,6 +37,16 @@ string Serie::toString()
 } 
 
 float Serie::averageRating()
+{
+    return 0;
+}
+
+int Serie::totalDuration()
+{
+    return 0;
+}
+
+int Serie::totalRaters()
 {
     return 0;
 }
