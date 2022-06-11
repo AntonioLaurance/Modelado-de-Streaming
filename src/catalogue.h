@@ -10,6 +10,7 @@
 #include "video.h"
 #include "movie.h"
 #include "episode.h"
+#include "serie.h"
 
 class Catalogue
 {

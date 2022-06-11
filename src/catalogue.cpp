@@ -50,7 +50,6 @@ Catalogue::Catalogue(string fileName){
             videos.push_back(new Movie(ID, name, duration, genre, rating, raters));
         }else{
             // Each one of the durations are read
-
             stringstream ssd((*itCatalogueData)[3]);
             string duationString;
             int duationInt;
@@ -113,10 +112,35 @@ Catalogue::Catalogue(string fileName){
             string name = (*itCatalogueData)[2];
             string genre = (*itCatalogueData)[4];
 
-            for(int i = 0; i < duartionsVector.size(); i++){
-                string ID = "S_" + (*itCatalogueData)[0] + "_" + to_string(seasonsVector[i]) + "_" + to_string(i);
-                videos.push_back(new Episode(ID, name, duartionsVector[i], genre, ratingsVector[i], ratersVector[i], titlesVector[i], seasonsVector[i]));
+            // Creamos vector de episodios
+            vector<vector<Episode*> > seriesEpisodes;
+            vector<Episode*> seasonEpisodes;
+            int countEpisode = 1;
+            int tempSeason = 1;
+            for(int i = 0; i < duartionsVector.size(); i++)
+            {
+                if(seasonsVector[i + 1] != tempSeason){
+
+                    string ID = "S_" + (*itCatalogueData)[0] + "_" + to_string(seasonsVector[i]) + "_" + to_string(countEpisode);
+                    seasonEpisodes.push_back(new Episode(ID, name, duartionsVector[i], genre, ratingsVector[i], ratersVector[i], titlesVector[i], seasonsVector[i]));
+                    countEpisode += 1;
+
+                    seriesEpisodes.push_back(seasonEpisodes);
+                    seasonEpisodes.clear();
+                    tempSeason += 1;
+                    countEpisode = 1;
+
+                }else{
+                    string ID = "S_" + (*itCatalogueData)[0] + "_" + to_string(seasonsVector[i]) + "_" + to_string(countEpisode);
+                    seasonEpisodes.push_back(new Episode(ID, name, duartionsVector[i], genre, ratingsVector[i], ratersVector[i], titlesVector[i], seasonsVector[i]));
+                    countEpisode += 1;
+                }
             }
+
+            // Instanciamos un objeto de tipo Serie utilizando el vector generado
+            string ID = "S_" + (*itCatalogueData)[0];
+            videos.push_back(new Serie(ID, name, genre, seriesEpisodes));
+            seriesEpisodes.clear();
         }
     }
 }

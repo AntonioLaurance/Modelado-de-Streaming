@@ -25,12 +25,16 @@ Serie::~Serie()
 string Serie::toString()
 {
     string txt = "";
-    txt += "[*] " + name + "\n";
+    txt += "[*]【Series】" + name + "\n";
     vector<vector<Episode*> >::iterator itSeasons;
     vector<Episode*>::iterator itEpisodes;
     for(itSeasons = episodes.begin(); itSeasons != episodes.end(); itSeasons++){
-        for(itEpisodes = (*itSeasons).begin(); itEpisodes != (*itSeasons).end(); itEpisodes++){
+        for(itEpisodes = (*itSeasons).begin(); itEpisodes != (*itSeasons).end() - 1; itEpisodes++){
             txt += (*itEpisodes)->toString() + "\n";
+        }
+        txt += (*(itEpisodes))->toString();
+        if(itSeasons != episodes.end() -1){
+            txt += "\n";
         }
     }
     return txt;

@@ -17,7 +17,7 @@ Movie::~Movie()
 string Movie::toString()
 {
     string txt = "";
-    txt += "[*] " + name + " : " + ID + "\n";
+    txt += "[*]【Movie】" + name + " : " + ID + "\n";
     txt += "\t-Duration: " + to_string(duration) + " min.\n";
     txt += "\t-Genre:    " + genre + ".\n";
     txt += "\t-Rating:   " ;
