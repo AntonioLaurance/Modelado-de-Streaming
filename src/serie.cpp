@@ -26,6 +26,10 @@ string Serie::toString()
 {
     string txt = "";
     txt += "[*]【Series】" + name + "\n";
+    txt += "\t-Duration:    " + to_string(duration) + " min.\n";
+    txt += "\t-Genre:       " + genre + ".\n";
+    txt += "\t-Avg. Rating: " + to_string(rating) + "\n";
+    
     vector<vector<Episode*> >::iterator itSeasons;
     vector<Episode*>::iterator itEpisodes;
     for(itSeasons = episodes.begin(); itSeasons != episodes.end(); itSeasons++){
@@ -38,11 +42,38 @@ string Serie::toString()
         }
     }
     return txt;
-} 
+}
 
 float Serie::averageRating()
 {
-    return 0;
+    float totalRating = 0, totalEpisodes = 0;
+    int totalRaters = 0, totalDuration = 0;
+
+    vector<vector<Episode*> >::iterator itEpisodes;
+    vector<Episode*>::iterator itSeason;
+    for(itEpisodes = episodes.begin(); itEpisodes != episodes.end(); itEpisodes++)
+    {
+        if((*itEpisodes).size() % 2 == 0)
+        {
+            for(itSeason = (*itEpisodes).begin(); itSeason != (*itEpisodes).end(); itSeason += 2)
+            {
+                
+                totalRating += (*(*itSeason) + *(*(itSeason + 1)))->getRating();
+                totalEpisodes += 2;
+            }
+        }
+        else
+        {
+            for(itSeason = (*itEpisodes).begin(); itSeason != (*itEpisodes).end() - 1; itSeason += 2)
+            {
+                totalRating += (*(*itSeason) + *(*(itSeason + 1)))->getRating();
+                totalEpisodes += 2;
+            }
+            totalRating += (*(*itSeason) + *(*(itSeason)))->getRating() / 2;
+            totalEpisodes += 1;
+        }
+    }
+    return totalRating / totalEpisodes;
 }
 
 int Serie::totalDuration()
@@ -52,5 +83,7 @@ int Serie::totalDuration()
 
 int Serie::totalRaters()
 {
+    int totalRaters = 0;
+
     return 0;
 }
