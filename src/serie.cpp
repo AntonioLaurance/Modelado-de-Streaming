@@ -64,8 +64,12 @@ float Serie::averageRating()
         {
             for(itSeason = (*itEpisodes).begin(); itSeason != (*itEpisodes).end(); itSeason += 2)
             {
+                Video* res = (*(*itSeason) + *(*(itSeason + 1)));
                 
-                totalRating += (*(*itSeason) + *(*(itSeason + 1)))->getRating();
+                totalRating += res->getRating();
+                totalRaters += res->getRaters();
+                totalDuration += res->getDuration();
+
                 totalEpisodes += 2;
             }
         }
@@ -73,24 +77,35 @@ float Serie::averageRating()
         {
             for(itSeason = (*itEpisodes).begin(); itSeason != (*itEpisodes).end() - 1; itSeason += 2)
             {
-                totalRating += (*(*itSeason) + *(*(itSeason + 1)))->getRating();
+                Video* res = (*(*itSeason) + *(*(itSeason + 1)));
+
+                totalRating += res->getRating();
+                totalRaters += res->getRaters();
+                totalDuration += res->getDuration();
+
                 totalEpisodes += 2;
             }
-            totalRating += (*(*itSeason) + *(*(itSeason)))->getRating() / 2;
+            
+            Video* res = (*(*itSeason) + *(*itSeason));
+                
+            totalRating += res->getRating() / 2;
+            totalRaters += res->getRaters() / 2;
+            totalDuration += res->getDuration() / 2;
+
             totalEpisodes += 1;
         }
     }
+    setRaters(totalRaters);
+    setDuration(totalDuration);
     return totalRating / totalEpisodes;
 }
 
 int Serie::totalDuration()
 {
-    return 0;
+    return duration;
 }
 
 int Serie::totalRaters()
 {
-    int totalRaters = 0;
-
-    return 0;
+    return raters;
 }
