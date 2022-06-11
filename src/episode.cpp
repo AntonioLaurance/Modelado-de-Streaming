@@ -1,14 +1,19 @@
 #include "episode.h"
 
-Episode::Episode(long usigned, int ID, string name, Time duration, char genre, string title, short unsigned int season, short float status): Video(ID, name, duration, genre, status)
-{
-	this -> season = season;
+Episode::Episode() : Video(){
+	title = "";
+	season = 0;
+}
+
+Episode::Episode(string ID, string name, int duration, string genre, float rating, int raters, string title, int season) : Video(ID, name, duration, genre, rating, raters){
 	this -> title = title;
+	this -> season = season;
 }
 
-Episode::~Episode()
-{
-	;
+Episode::~Episode(){
+	; // Null statement
 }
 
-
+string Episode::toString(){
+	return "Todavía no implementado";
+}

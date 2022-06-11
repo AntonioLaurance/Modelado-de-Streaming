@@ -86,7 +86,6 @@ string Video::toString(){
 
 Video* Video::operator + (Video& otherVideo){
 	Video* res = new Movie();
-	
 	res->setRating(rating + otherVideo.getRating());
 
 	return res;
