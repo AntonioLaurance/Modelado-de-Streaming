@@ -13,7 +13,7 @@ Serie::Serie(vector<vector<Episode*> > episodes, int seasons)
 
 Serie::~Serie()
 {
-    ; // Null statement
+    episodes.clear(); 
 }
 
 string Serie::toString()
