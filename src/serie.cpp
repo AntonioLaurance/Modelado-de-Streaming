@@ -19,9 +19,11 @@ Serie::~Serie()
 string Serie::toString()
 {
     string txt = "";
-    txt += "[*] " + episodes[0][0]->getName() + "\n";
+    txt += "[*] " + episodes[0][0] -> getName() + "\n";
+
     vector<vector<Episode*> >::iterator itSeasons;
     vector<Episode*>::iterator itEpisodes;
+
     for(itSeasons = episodes.begin(); itSeasons != episodes.end(); itSeasons++){
         for(itEpisodes = (*itSeasons).begin(); itEpisodes != (*itSeasons).end(); itEpisodes++){
             txt += (*itEpisodes)->toString() + "\n";

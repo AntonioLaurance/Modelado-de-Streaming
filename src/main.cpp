@@ -19,20 +19,13 @@ int main()
     episodes.push_back({e1, e2});
     episodes.push_back({e3});
 
+    Serie* s1 = new Serie(episodes, 2);
 
-   Serie* s1 = new Serie(episodes, 2);
-
-   cout << s1->toString() << endl << endl;
-
-    cout << m1->toString() << endl << endl;
-
-
+    cout << s1 -> toString() << endl << endl;
+    cout << m1 -> toString() << endl << endl;
     cout << e1 -> toString() << endl << endl;
 
-    
-
     cout << "Promedio de ratings: " << (*m1 + *e1)->getRating() / 2 << endl;
-
 
     return 0;
 }
