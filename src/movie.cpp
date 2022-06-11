@@ -24,9 +24,9 @@ string Movie::toString()
     
     // Add stars to the ranting 
     for(int i = 0; i < (int) rating; i++)
-        txt += "\U2B50 ";
+        txt += "\U00012B50 ";
 
-    txt +=  to_string(rating) + " stars.\n"
+    txt +=  to_string(rating) + " stars.\n";
     txt += "\n\t-Raters:   " + to_string(raters) + " raters.";
 
     return txt;
