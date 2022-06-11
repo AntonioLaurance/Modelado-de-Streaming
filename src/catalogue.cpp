@@ -184,14 +184,7 @@ void Catalogue::toCsv()
     vector<Video*>::iterator it;
     for(it = videos.begin(); it != videos.end(); it++)
     {
-        try{
-            (*it)->getEpisodes();
-            throw "Movies don't have episodes!";
-        }
-        //cout << "Sereies" << endl;
-        catch(...){
-            cout << "Movie" << endl;
-        }
+        ;
     }
 
     outputFile.close();
