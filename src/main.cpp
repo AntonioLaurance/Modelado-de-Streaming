@@ -20,10 +20,5 @@ int main()
 
     cout << c1->toString() << endl;
 
-
-
-    
-
-
     return 0;
 }
