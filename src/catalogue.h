@@ -7,6 +7,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <typeinfo>
 #include "video.h"
 #include "movie.h"
 #include "episode.h"
@@ -22,6 +23,7 @@ class Catalogue
         ~Catalogue();
 
         string toString();
+        void toCsv();
 };
 
 #endif

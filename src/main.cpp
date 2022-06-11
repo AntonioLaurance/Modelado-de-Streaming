@@ -20,5 +20,7 @@ int main()
 
     cout << c1->toString() << endl;
 
+    c1 -> toCsv();
+
     return 0;
 }

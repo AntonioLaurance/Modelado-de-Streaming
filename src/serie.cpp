@@ -22,6 +22,10 @@ Serie::~Serie()
     episodes.clear(); 
 }
 
+vector<vector<Episode*> > Serie::getEpisodes(){
+    return episodes;
+}
+
 string Serie::toString()
 {
     string txt = "";

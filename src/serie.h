@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include "video.h"
+#include "movie.h"
 #include "episode.h"
 
 class Serie : public Video
@@ -20,6 +21,10 @@ class Serie : public Video
         Serie(string ID, string name, string genre,  vector<vector<Episode*> > episodes);
         ~Serie();
 
+        // Getter method for the array of arrays of episodes
+        vector<vector<Episode*> > getEpisodes();
+
+        // Aditional methods
         string toString();
         float averageRating();
         int totalDuration();
