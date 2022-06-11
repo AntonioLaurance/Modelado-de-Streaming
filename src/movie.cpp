@@ -20,8 +20,15 @@ string Movie::toString()
     txt += "[*] " + name + " : " + ID + "\n";
     txt += "\t-Duration: " + to_string(duration) + " min.\n";
     txt += "\t-Genre:    " + genre + ".\n";
-    txt += "\t-Rating:   " + to_string(rating) + " stars.\n";
-    txt += "\t-Raters:   " + to_string(raters) + " raters.";
+    txt += "\t-Rating:   " ;
+    
+    // Add stars to the ranting 
+    for(int i = 0; i < (int) rating; i++)
+        txt += "\U2B50 ";
+
+    txt +=  to_string(rating) + " stars.\n"
+    txt += "\n\t-Raters:   " + to_string(raters) + " raters.";
 
     return txt;
 }
+
