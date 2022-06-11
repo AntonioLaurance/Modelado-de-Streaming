@@ -1,7 +1,8 @@
 #include "video.h"
 #include "movie.h"
 
-Video::Video(){
+Video::Video()
+{
 	ID = "";
 	name = "";
 	duration = 0;	

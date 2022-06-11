@@ -1,6 +1,7 @@
 #include "catalogue.h"
 
-Catalogue::Catalogue(string fileName){
+Catalogue::Catalogue(string fileName)
+{
     // Leemos el csv y guardamos los datos en un vector de vectores de string
     // Por cada video hacemos una nueva linea
     ifstream inputFile;
@@ -145,11 +146,13 @@ Catalogue::Catalogue(string fileName){
     }
 }
 
-Catalogue::~Catalogue(){
+Catalogue::~Catalogue()
+{
     ; // Null statement
 }
 
-string Catalogue::toString(){
+string Catalogue::toString()
+{
     string txt = "";
     txt += "#############\n";
     txt += "# CATALOGUE #\n";

@@ -1,6 +1,7 @@
 #include "movie.h"
 
-Movie::Movie() : Video(){
+Movie::Movie() : Video()
+{
     ; // Null statement
 }
 
