@@ -28,7 +28,13 @@ string Serie::toString()
     txt += "[*]【Series】" + name + "\n";
     txt += "\t-Duration:    " + to_string(duration) + " min.\n";
     txt += "\t-Genre:       " + genre + ".\n";
-    txt += "\t-Avg. Rating: " + to_string(rating) + "\n";
+    txt += "\t-Avg. Rating: ";
+
+    // Add stars to the ranting
+    for(int i = 0; i < (int) rating; i++)
+        txt += "⭐️ ";   //  character in unicode: "\U00012B50 "
+
+    txt += to_string(rating) + "\n";
     
     vector<vector<Episode*> >::iterator itSeasons;
     vector<Episode*>::iterator itEpisodes;
