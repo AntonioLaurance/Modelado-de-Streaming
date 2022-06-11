@@ -17,14 +17,13 @@ int main()
 
     Catalogue* c1 = new Catalogue("dataBase.csv");
 
-    cout << m1->toString() << endl << endl;
+
+    cout << c1->toString() << endl;
 
 
-    cout << e1 -> toString() << endl << endl;
 
     
 
-    cout << "Promedio de ratings: " << (*m1 + *e1)->getRating() / 2 << endl;
 
 
     return 0;
