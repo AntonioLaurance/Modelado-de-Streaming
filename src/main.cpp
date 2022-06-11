@@ -5,6 +5,7 @@
 #include "movie.h"
 #include "episode.h"
 #include "serie.h"
+#include "catalogue.h"
 
 int main()
 {
@@ -14,15 +15,7 @@ int main()
     Episode* e2 = new Episode("P_00001_001_00002", "Breaking Bad", 45, "Drama", 3.8, 15039, "La llegada del mal", 1);
     Episode* e3 = new Episode("P_00001_002_00001", "Breaking Bad", 38, "Drama", 4.6, 15039, "La llegada del mal", 2);
 
-    vector<vector<Episode*> > episodes;
-
-    episodes.push_back({e1, e2});
-    episodes.push_back({e3});
-
-
-   Serie* s1 = new Serie(episodes, 2);
-
-   cout << s1->toString() << endl << endl;
+    Catalogue* c1 = new Catalogue("dataBase.csv");
 
     cout << m1->toString() << endl << endl;
 

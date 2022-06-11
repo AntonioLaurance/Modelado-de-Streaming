@@ -28,7 +28,7 @@ string Serie::toString()
         }
     }
     return txt;
-}
+} 
 
 float Serie::averageRating()
 {
