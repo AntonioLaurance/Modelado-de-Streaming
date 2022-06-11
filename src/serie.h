@@ -10,18 +10,18 @@
 class Serie
 {
     private:
-        vector<vector<Episode*>> episodes;
+        vector<vector<Episode*> > episodes;
         int seasons;
 
     public:
         // Constructor and Destructor Method
         Serie();
-        Serie(vector<Episode*> episodes, int seasons);
+        Serie(vector<vector<Episode*> > episodes, int seasons);
+        ~Serie();
 
         string toString();
         float averageRating();
 
 };
-
 
 #endif
