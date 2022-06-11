@@ -9,6 +9,7 @@
 #include <sstream>
 #include "video.h"
 #include "movie.h"
+#include "episode.h"
 
 class Catalogue
 {
