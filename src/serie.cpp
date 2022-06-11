@@ -25,16 +25,17 @@ Serie::~Serie()
 string Serie::toString()
 {
     string txt = "";
-    txt += "[*]【Series】" + name + "\n";
-    txt += "\t-Duration:    " + to_string(duration) + " min.\n";
-    txt += "\t-Genre:       " + genre + ".\n";
-    txt += "\t-Avg. Rating: ";
+    txt += "[*]【Series】" + name + " : " + ID + "\n";
+    txt += "\t-Total Duration: " + to_string(duration) + " min.\n";
+    txt += "\t-Genre:          " + genre + ".\n";
+    txt += "\t-Average Rating: ";
 
     // Add stars to the ranting
     for(int i = 0; i < (int) rating; i++)
         txt += "⭐️ ";   //  character in unicode: "\U00012B50 "
 
-    txt += to_string(rating) + "\n";
+    txt += to_string(rating) + " stars.\n";
+    txt += "\t-Total Raters:   " + to_string(raters) + " raters.\n";
     
     vector<vector<Episode*> >::iterator itSeasons;
     vector<Episode*>::iterator itEpisodes;
