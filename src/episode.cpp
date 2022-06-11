@@ -8,7 +8,7 @@ Episode::Episode(long usigned, int ID, string name, Time duration, char genre, s
 
 Episode::~Episode()
 {
-
+	;
 }
 
 

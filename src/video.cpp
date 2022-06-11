@@ -1,4 +1,5 @@
 #include "video.h"
+#include "movie.h"
 
 Video::Video(){
 	ID = "";
@@ -77,4 +78,16 @@ void Video::setRating(float rating){
 
 void Video::setRaters(int raters){
 	this -> raters = raters;
+}
+
+string Video::toString(){
+	return "string";
+}
+
+Video* Video::operator + (Video& otherVideo){
+	Video* res = new Movie();
+	
+	res->setRating(rating + otherVideo.getRating());
+
+	return res;
 }
