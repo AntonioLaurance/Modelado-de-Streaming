@@ -1,6 +1,7 @@
 #include "movie.h"
 
-Movie::Movie() : Video(){
+Movie::Movie() : Video()
+{
     ; // Null statement
 }
 
@@ -17,17 +18,20 @@ Movie::~Movie()
 string Movie::toString()
 {
     string txt = "";
-    txt += "[*] " + name + " : " + ID + "\n";
+    txt += "[*]【Movie】" + name + " : " + ID + "\n";
     txt += "\t-Duration: " + to_string(duration) + " min.\n";
     txt += "\t-Genre:    " + genre + ".\n";
     txt += "\t-Rating:   " ;
     
-    // Add stars to the ranting 
+    /* FALLAS EN LA IMPLEMENTACION DE ESTRELLAS
+    // Add stars to the ranting
     for(int i = 0; i < (int) rating; i++)
         txt += "\U00012B50 ";
 
-    txt +=  "  " + to_string(rating) + " stars.\n";
-    txt += "\n\t-Raters:   " + to_string(raters) + " raters.";
+    */
+
+    txt +=  to_string(rating) + " stars.\n";
+    txt += "\t-Raters:   " + to_string(raters) + " raters.";
 
     return txt;
 }

@@ -15,7 +15,7 @@ class Video
 		int duration;
 		string genre;
 		float rating;
-		int raters; 
+		int raters;
 
 	public:
 		// Constructor & Destructor
