@@ -30,6 +30,7 @@
   ],
   "files.associations": {
     "iosfwd": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "vector": "cpp"
   }
 }
