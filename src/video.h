@@ -7,19 +7,10 @@
 
 using namespace std;
 
-struct ID{
-	char type;
-	int number;
-	int season;     // If type = 'P' no prints 
-	int episode;	// If type = 'P' no prints 
-}
-
-typedef struct ID ID;
-
 class Video
 {
 	protected:
-		ID identifier;
+		string ID;
 		string name;
 		int duration;
 		string genre;
