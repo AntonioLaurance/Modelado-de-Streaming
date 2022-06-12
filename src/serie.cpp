@@ -5,7 +5,7 @@ Serie::Serie() : Video()
     seasons = 0;
 }
 
-Serie::Serie(string ID, string name, string genre,  vector<vector<Episode*> > episodes) : Video()
+Serie::Serie(string ID, string name, string genre, vector<vector<Episode*> > episodes) : Video()
 {
     this -> episodes = episodes;
     seasons = episodes.size();
@@ -53,6 +53,22 @@ string Serie::toString()
             txt += "\n";
         }
     }
+    return txt;
+}
+
+string Serie::toCsvString()
+{
+    string txt = "series," + name + ",";
+
+    // Vector duration
+
+    // Vector rating
+
+    // Vector raters
+
+    // Vector episodeTitles
+
+    // Vector seasonNumbers
     return txt;
 }
 
