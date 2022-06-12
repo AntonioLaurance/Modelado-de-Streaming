@@ -14,7 +14,7 @@ Episode::Episode(string ID, string name, int duration, string genre, float ratin
 
 Episode::~Episode()
 {
-	; // Null statement
+    title.clear();
 }
 
 string Episode::toString()
