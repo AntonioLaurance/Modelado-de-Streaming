@@ -150,7 +150,17 @@ Catalogue::Catalogue(string fileName)
 
 Catalogue::~Catalogue()
 {
-    ; // Null statement
+    videos.clear(); 
+}
+
+vector<Video *> Catalogue::getVideos()
+{
+    return videos;
+}
+
+void Catalogue::setVideos(vector<Video *> videos)
+{
+    this -> videos = videos;
 }
 
 string Catalogue::toString()

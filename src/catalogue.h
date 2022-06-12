@@ -22,6 +22,10 @@ class Catalogue
         Catalogue(string fileName);
         ~Catalogue();
 
+        // Geter & Setter
+        vector<Video *> getVideos();
+        void setVideos(vector<Video *> videos);
+
         string toString();
         void toCsv();
 };
