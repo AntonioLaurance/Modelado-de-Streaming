@@ -13,7 +13,10 @@ class Movie: public Video
         ~Movie();
 
         // Overriding method
-        string toString();     
+        string toString();  
+        void addReview(int review);  
+
+        string toCsvString(); 
 };
 
 #endif

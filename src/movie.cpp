@@ -12,7 +12,9 @@ Movie::Movie(string ID, string name, int duration, string genre, float rating, i
 
 Movie::~Movie()
 {
-    ; // Null statement
+    ID.clear();
+    name.clear();
+    genre.clear();
 }
 
 string Movie::toString()
@@ -33,3 +35,10 @@ string Movie::toString()
     return txt;
 }
 
+string Movie::toCsvString()
+{
+    string txt = "movie," + name + "," + duration + "," + genre + ",";
+    txt += rating + "," + raters;
+
+    return txt;
+}
