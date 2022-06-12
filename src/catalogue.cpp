@@ -192,9 +192,12 @@ void Catalogue::toCsv()
 
     int indexNumber = 1;
     vector<Video*>::iterator it;
-    for(it = videos.begin(); it != videos.end(); it++)
+    for(it = videos.begin(); it != videos.end(); ++it)
     {
-        ;
+        // Do we use the method toString?
+        // We can process this polymorphically 
+        outputFile << indexNumber << "," << (*it) -> toCsvString() << endl;
+        indexNumber++;
     }
 
     outputFile.close();

@@ -26,6 +26,7 @@ class Catalogue
         vector<Video *> getVideos();
         void setVideos(vector<Video *> videos);
 
+        // Other methods
         string toString();
         void toCsv();
 };
