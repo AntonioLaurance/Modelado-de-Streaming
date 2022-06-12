@@ -42,6 +42,7 @@ class Video
 		// Other functions 
 		virtual string toString() = 0;
 		Video* operator + (Video& otherVideo);
+		void addReview(int review);
 };
 
 #endif

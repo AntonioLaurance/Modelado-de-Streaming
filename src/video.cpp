@@ -22,7 +22,9 @@ Video::Video(string ID, string name, int duration, string genre, float rating, i
 }
 
 Video::~Video(){
-	; // Null statement
+	ID.clear();
+	name.clear();
+	genre.clear();
 }
 
 string Video::getID()
@@ -92,4 +94,10 @@ Video* Video::operator + (Video& otherVideo){
 	res->setRaters(raters + otherVideo.getRaters());
 
 	return res;
+}
+
+void Video::addReview(int review)
+{
+    // new_average = (x_i - old average)/total 
+    rating += (review - rating)/(raters + 1);
 }
