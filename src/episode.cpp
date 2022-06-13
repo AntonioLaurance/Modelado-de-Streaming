@@ -34,3 +34,11 @@ string Episode::toString()
 
     return txt;
 }
+
+string Episode::toCsvString()
+{
+    string txt = "episode," + title + "," + to_string(duration) + "," + genre + ",";
+    txt += to_string(rating) + "," + to_string(raters);
+
+    return txt;
+}

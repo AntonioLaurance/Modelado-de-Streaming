@@ -37,8 +37,8 @@ string Movie::toString()
 
 string Movie::toCsvString()
 {
-    string txt = "movie," + name + "," + duration + "," + genre + ",";
-    txt += rating + "," + raters;
+    string txt = "movie," + name + "," + to_string(duration) + "," + genre + ",";
+    txt += to_string(rating) + "," + to_string(raters);
 
     return txt;
 }
