@@ -29,6 +29,12 @@ class Catalogue
         // Other methods
         string toString();
         void toCsv();
+        void organizeRatingAscendente(); //metodo para ordenar videos de mayor a menor
+        void organizeRatingDescendente(); //metodo para ordenar videos de mayor a menor
+        void organizeRatersDescendente();
+        void organizeRatersAscendente();
+        void organizeDuracionAscendente();
+        void organizeDuracionDescendente();
 };
 
 #endif

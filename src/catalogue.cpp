@@ -183,18 +183,19 @@ void Catalogue::toCsv()
     ofstream outputFile;
     outputFile.open("dataBase2.csv");
     // 2,series,Breaking Bad,123;35;65;56,Action,4.5;2.2;3.8;4.9,1246;3245;765;9856,Titulo 1;Titulo 2;Titulo 3;Titulo 4,1;1;2;3
+    /*
     outputFile << "index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers\n";
     outputFile << "1,movie,El Lobo de Wallstreet,123,Action,4.5,1246\n";
     outputFile << "2,series,Breaking Bad,123;35;65;56,Action,4.5;2.2;3.8;4.9,1246;3245;765;9856,Titulo 1;Titulo 2;Titulo 3;Titulo 4,1;1;2;3\n";
     outputFile << "3,movie,Mi Villano Favorito,63,Comedy,2.5,6632\n";
     outputFile << "4,movie,Lluvia de Hamburguesas,90,Action,4,14937\n";
-
+    */
 
     int indexNumber = 1;
     vector<Video*>::iterator it;
     for(it = videos.begin(); it != videos.end(); ++it)
     {
-        // Do we use the method toString?
+        // Do we use the method toCsvString?
         // We can process this polymorphically 
         outputFile << indexNumber << "," << (*it) -> toCsvString() << endl;
         indexNumber++;
@@ -202,3 +203,104 @@ void Catalogue::toCsv()
 
     outputFile.close();
 }
+
+void Catalogue::organizeRatingAscendente(){ //metodo para ordenar videos de mayor a menor RATING
+    Video *auxiliar;
+    
+    for (int i=0;i<this->videos.size();i++){
+        for(int j=0;j<this->videos.size()-1;j++){
+            if (this->videos.at(j)->getRating() > this->videos.at(j+1)->getRating()){
+                //ordena de mayor a menor por rating
+                auxiliar=this->videos.at(j);
+                this->videos.at(j)=this->videos.at(j+1);
+                this->videos.at(j+1)=auxiliar;
+                
+            }
+                
+        }
+    }
+}//cierre de organizeAscendente
+
+void Catalogue::organizeRatingDescendente(){ //ordenar videos de menor a mayor RATING
+    
+    Video *auxiliar;
+    
+    for (int i=0;i<this->videos.size();i++){
+        for(int j=0;j<this->videos.size()-1;j++){
+            if (this->videos.at(j)->getRating() < this->videos.at(j+1)->getRating()){
+                //ordena de mayor a menor por rating
+                auxiliar=this->videos.at(j);
+                this->videos.at(j)=this->videos.at(j+1);
+                this->videos.at(j+1)=auxiliar;
+                
+            }
+                
+        }
+    }
+}//cierre de organizeDescente
+
+void Catalogue::organizeRatersDescendente(){
+    
+    
+    Video *auxiliar;
+    
+    for (int i=0;i<this->videos.size();i++){
+        for(int j=0;j<this->videos.size()-1;j++){
+            if (this->videos.at(j)->getRaters() < this->videos.at(j+1)->getRaters()){
+                //ordena de mayor a menor por NUM DE RATERS
+                auxiliar=this->videos.at(j);
+                this->videos.at(j)=this->videos.at(j+1);
+                this->videos.at(j+1)=auxiliar;
+                
+            }       
+        }
+    } 
+}//cierre de organizeRatersDescendente()
+
+void Catalogue::organizeRatersAscendente(){
+    Video *auxiliar;
+    
+    for (int i=0;i<this->videos.size();i++){
+        for(int j=0;j<this->videos.size()-1;j++){
+            if (this->videos.at(j)->getRaters() > this->videos.at(j+1)->getRaters()){
+                //ordena de menor a mayor por NUM DE RATERS
+                auxiliar=this->videos.at(j);
+                this->videos.at(j)=this->videos.at(j+1);
+                this->videos.at(j+1)=auxiliar;       
+            }
+        }
+    }
+}// cierre de organizeRatersAscendente()
+
+void Catalogue::organizeDuracionAscendente(){
+    
+    Video *auxiliar;
+    
+    for (int i=0;i<this->videos.size();i++){
+        for(int j=0;j<this->videos.size()-1;j++){
+            if (this->videos.at(j)->getDuration() > this->videos.at(j+1)->getDuration()){
+                //ordena de menor a mayor por DURACION
+                auxiliar=this->videos.at(j);
+                this->videos.at(j)=this->videos.at(j+1);
+                this->videos.at(j+1)=auxiliar;
+                
+            }            
+        }
+    }
+} // cierre organizeDuracionAscendente()
+
+void Catalogue::organizeDuracionDescendente(){
+    Video *auxiliar;
+    
+    for (int i=0;i<this->videos.size();i++){
+        for(int j=0;j<this->videos.size()-1;j++){
+            if (this->videos.at(j)->getDuration() < this->videos.at(j+1)->getDuration()){
+                //ordena de mayor a menor por DURACION
+                auxiliar=this->videos.at(j);
+                this->videos.at(j)=this->videos.at(j+1);
+                this->videos.at(j+1)=auxiliar;
+                
+            }         
+        }
+    }
+} //cierre organizeDuracionDescendente()
