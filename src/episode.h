@@ -18,8 +18,9 @@ class Episode: public Video
 		Episode(string ID, string name, int duration, string genre, float rating, int raters, string title, int season);
 		~Episode();
 
-		// Overriding method
+		// Overriding methods
 		string toString();
+		string toCsvString();
 };
 
 #endif
