@@ -99,5 +99,6 @@ Video* Video::operator + (Video& otherVideo){
 void Video::addReview(int review)
 {
     // new_average = (x_i - old average)/total 
-    rating += (review - rating)/(raters + 1);
+	raters++;
+    rating += (review - rating)/(raters);
 }
