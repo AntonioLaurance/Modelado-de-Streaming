@@ -34,7 +34,8 @@ int main()
         {
             vector<Video *> videos = c1 -> getVideos();
             vector<Video *>::iterator it;
-            int i = 1, election, grade;  // [Counter, election of video to rank]
+            int i = 1, election;  // [Counter, election of video to rank]
+            float grade;
 
             cout << "Chosse the video that you want to review:" << endl;
 
