@@ -78,7 +78,7 @@ Catalogue::Catalogue(string fileName)
                 ratingsVector.push_back(ratingFloat);
             }
 
-            // Each one of the ratings is read
+            // Each one of the raters is read
             stringstream ssrs((*itCatalogueData)[6]);
             string ratersString;
             int ratersInt;
@@ -184,15 +184,9 @@ void Catalogue::toCsv()
     outputFile.open("dataBase2.csv");
     // 2,series,Breaking Bad,123;35;65;56,Action,4.5;2.2;3.8;4.9,1246;3245;765;9856,Titulo 1;Titulo 2;Titulo 3;Titulo 4,1;1;2;3
     
+    // HEADER
     outputFile << "index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers\n";
     
-    /*
-    outputFile << "1,movie,El Lobo de Wallstreet,123,Action,4.5,1246\n";
-    outputFile << "2,series,Breaking Bad,123;35;65;56,Action,4.5;2.2;3.8;4.9,1246;3245;765;9856,Titulo 1;Titulo 2;Titulo 3;Titulo 4,1;1;2;3\n";
-    outputFile << "3,movie,Mi Villano Favorito,63,Comedy,2.5,6632\n";
-    outputFile << "4,movie,Lluvia de Hamburguesas,90,Action,4,14937\n";
-    */
-
     int indexNumber = 1;
     vector<Video*>::iterator it;
     for(it = videos.begin(); it != videos.end(); ++it)

@@ -1,5 +1,5 @@
 index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers
-1,movie,El Lobo de Wallstreet,123,Action,4.5,1246
-2,series,Breaking Bad,123;35;65;56,Action,4.5;2.2;3.8;4.9,1246;3245;765;9856,Titulo 1;Titulo 2;Titulo 3;Titulo 4,1;1;2;3
-3,movie,Mi Villano Favorito,63,Comedy,2.5,6632
-4,movie,Lluvia de Hamburguesas,90,Action,4,14937
+1,movie,El Lobo de Wallstreet,123,Action,4.500000,1246
+2,series,Breaking Bad,123;35;65;56,Action,4.500000;2.200000;3.800000;4.900000,1246;3245;765;9856,Breaking Bad;Breaking Bad;Breaking Bad;Breaking Bad,1;1;2;3
+3,movie,Mi Villano Favorito,63,Comedy,2.500565,6634
+4,movie,Lluvia de Hamburguesas,90,Action,4.000000,14937
