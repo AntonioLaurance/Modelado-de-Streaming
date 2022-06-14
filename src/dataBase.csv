@@ -1,5 +1,62 @@
-index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers
-1,movie,El Lobo de Wallstreet,123,Action,4.500000,1246
-2,series,Breaking Bad,123;35;65;56,Action,4.500000;2.200000;3.800000;4.900000,1246;3245;765;9856,Breaking Bad;Breaking Bad;Breaking Bad;Breaking Bad,1;1;2;3
-3,movie,Mi Villano Favorito,63,Comedy,2.500151,6633
-4,movie,Lluvia de Hamburguesas,90,Action,4.000033,14938
+num,tipo,nombre,duracion,genero,rating,raters,titulo,temporada
+1,movie,El Lobo de Wallstreet,123,Action,4,1246,,
+2,movie,Mi Villano Favorito,63,Comedy,2,6632,,
+3,movie,Lluvia de Hamburguesas,90,Action,4,14937,,
+4,movie,Jurassic Park,147,Action,4,32234,,
+5,movie,Intensamente,92,Kids,3.7,23523,,
+6,movie,Transformers,127,Action,4,457457,,
+7,movie,Space Jam,90,Comedy,2,141,,
+8,movie,Turning Red,85,Comedy,4.5,35235,,
+9,movie,The Parent Trap,105,Comedy,3,43463,,
+10,movie,The Beach,95,Mistery,2.5,25254,,
+11,series,Breaking Bad,50,Action,4,6645454,Pilot,1
+12,series,Breaking Bad,50,Action,5,5568548,Cat's in the Bag...,1
+13,series,Breaking Bad,50,Action,3.5,2357546,...and the Bag's in the River,1
+14,series,Breaking Bad,50,Action,5,5745734,Cancer Man,2
+15,series,Breaking Bad,50,Action,4.5,2553452,Gray Matter,2
+16,series,Breaking Bad,50,Action,5,2456453,Crazy Handful of Nothin',2
+17,series,Breaking Bad,50,Action,3.5,1564357,A No-Rough-Stuff-Type Deal,3
+18,series,Breaking Bad,50,Action,5,2345345,Seven Thirty-Seven,3
+19,series,Breaking Bad,50,Action,4,8735353,Grilled,3
+20,series,Breaking Bad,50,Action,4,4634623,Bit by a Dead Bee,4
+21,series,Breaking Bad,50,Action,4,7825324,Down,4
+22,series,Breaking Bad,50,Action,5,8679533,Breakage,4
+23,series,Breaking Bad,50,Action,3.5,8474745,Peekaboo,5
+24,series,Breaking Bad,50,Action,5,5657437,Negro y Azul,5
+25,series,Breaking Bad,50,Action,4.5,4745745,Better Call Saul,5
+26,series,Breaking Bad,50,Action,5,6634534,4 Days Out,6
+27,series,Breaking Bad,50,Action,3.5,5463464,Over,6
+28,series,Breaking Bad,50,Action,5,2364573,Mandala,6
+29,series,Breaking Bad,50,Action,5,3345253,Phoenix,7
+30,series,Breaking Bad,50,Action,5,2424634,ABQ,7
+31,series,Bones,50,Drama,3.5,3322727,Pilot,1
+32,series,Bones,50,Drama,3,2784274,The Man in the S.U.V.,1
+33,series,Bones,50,Drama,3.5,1178773,A Boy in a Tree,1
+34,series,Bones,50,Drama,2.5,2872867,The Man in the Bear,2
+35,series,Bones,50,Drama,4,1276726,A Boy in a Bush,2
+36,series,Bones,50,Drama,5,1228226,The Man in the Wall,2
+37,series,Bones,50,Drama,3.5,782178,A Man on Death Row,3
+38,series,Bones,50,Drama,3,1172672,The Girl in the Fridge,3
+39,series,Bones,50,Drama,3,4367676,The Man in the Fallout Shelter,3
+40,series,Bones,50,Drama,3.5,2317311,The Woman at the Airport,4
+41,series,Bones,50,Drama,2.5,3912662,The Woman in the Car,4
+42,series,Bones,50,Drama,4,4339766,The Superhero in the Alley,4
+43,series,Bones,50,Drama,5,4237372,The Woman in the Garden,5
+44,series,Bones,50,Drama,3.5,2828718,The Man on the Fairway,5
+45,series,Bones,50,Drama,3,2372872,Two Bodies in the Lab,5
+46,series,Bones,50,Drama,3,3317267,The Woman in the Tunnel,6
+47,series,Bones,50,Drama,3.5,2731732,The Skull in the Desert,6
+48,series,Bones,50,Drama,2.5,1182286,The Man with the Bone,6
+49,series,Bones,50,Drama,4,1672626,The Man in the Morgue,7
+50,series,Bones,50,Drama,5,1212317,The Graft in the Girl,7
+51,series,Bones,50,Drama,3.5,1661363,The Soldier on the Grave,7
+52,series,Bones,50,Drama,3,1392137,The Woman in Limbo,8
+53,series,Squid Game,50,Mistery,5,3830178,Mugunghwa kkoch-i pideon nal,1
+54,series,Squid Game,50,Mistery,4,3684678,Ji-ok,1
+55,series,Squid Game,50,Mistery,4.5,2346534,Usan-eul sseun namja,1
+56,series,Squid Game,50,Mistery,4.5,3518016,Jjollyeodo pyeonmeokgi,1
+57,series,Squid Game,50,Mistery,5,13103028,Pyeongdeung-han sesang,1
+58,series,Squid Game,50,Mistery,4.5,6951933,Kkanbu,1
+59,series,Squid Game,50,Mistery,5,11737986,VIPS,1
+60,series,Squid Game,50,Mistery,4.5,13019298,Peulonteu maen,1
+61,series,Squid Game,50,Mistery,5,12712116,Unsu joeun nal,1
