@@ -14,8 +14,6 @@ class Movie: public Video
 
         // Overriding method
         string toString();  
-        void addReview(int review);  
-
         string toCsvString(); 
 };
 
