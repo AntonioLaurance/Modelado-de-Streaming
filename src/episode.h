@@ -19,8 +19,8 @@ class Episode: public Video
 		~Episode();
 
 		// Overriding methods
-		string toString();
-		string toCsvString();
+		string override toString();
+		string override toCsvString();
 };
 
 #endif
