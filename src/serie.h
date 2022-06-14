@@ -24,10 +24,9 @@ class Serie : public Video
         // Getter method for the array of arrays of episodes
         vector<vector<Episode*> > getEpisodes();
 
-         
         // Aditional methods
-        string overide toString();
-        string overide toCsvString();
+        string toString();
+        string toCsvString();
         float averageRating();
         int totalDuration();
         int totalRaters();
