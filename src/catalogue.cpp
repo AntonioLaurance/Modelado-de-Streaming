@@ -181,7 +181,7 @@ string Catalogue::toString()
 void Catalogue::toCsv()
 {
     ofstream outputFile;
-    outputFile.open("dataBase2.csv");
+    outputFile.open("dataBase.csv");
     // 2,series,Breaking Bad,123;35;65;56,Action,4.5;2.2;3.8;4.9,1246;3245;765;9856,Titulo 1;Titulo 2;Titulo 3;Titulo 4,1;1;2;3
     
     // HEADER
