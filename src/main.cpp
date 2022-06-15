@@ -1,18 +1,33 @@
 
 /* ACTUALMENTE ESTE MAIN ES DE PRUEBA Y PARA PROBAR EL CODIGO Y SU FUNCIONAMIENTO */
-
+#include <ctype.h>
 #include "video.h"
 #include "movie.h"
 #include "episode.h"
 #include "serie.h"
 #include "catalogue.h"
 
+bool isnumber(string str){
+    bool res = true;
+    string::iterator it;
+    for(it = str.begin(); it != str.end(); it++){
+        res = res && isdigit(*it);
+        if(!res){
+            break;
+        }
+    }
+    return res;
+}
+
 int main()
 {
-    int option;
     Catalogue* c1 = new Catalogue("dataBase.csv");
 
     do{
+        string option;
+        int optionNum;
+        stringstream ss;
+        
         // Mostramos el menú de acciones para nuestros usuarios
         cout << "Options:" << endl;
         cout << "\t1) Review any video" << endl;
@@ -20,23 +35,31 @@ int main()
         cout << "\t3) Exit" << endl;
         cout << "\n>>> ";
 
+        cin >> option;
+
         try
         {
-            cin >> option;
 
-            /*
-            if(typeof(option) == string || typeof(option == char *))
+            if(!isnumber(option))
+            {
                 throw "Dato no numérico introducido";
-            */
-
-        } catch(bad_cast){
+            }
+            else
+            {
+                ss << option;
+                ss >> optionNum;
+            }
+        
+        } 
+        catch(...)
+        {
             cout << "The input data is not a number" << endl;
-            cin >> option;
+            continue;
         }
         
         cout << endl;
 
-        if(option == 1)
+        if(optionNum == 1)
         {
             vector<Video *> videos = c1 -> getVideos();
             vector<Video *>::iterator it;
@@ -104,15 +127,19 @@ int main()
             }
 
         } 
-        else if(option == 2)
+        else if(optionNum == 2)
         {
             cout << c1 -> toString() << endl;
         } 
-        else if(option != 3)
+        else if(optionNum == 3)
+        {
+            break;
+        } 
+        else if(optionNum != 3)
         {
             cout << "Incorrect option." << endl;
         }
-    }while(option != 3);
+    }while(true);
     
     c1 -> toCsv();
     free(c1);
