@@ -35,10 +35,11 @@ string Movie::toString()
     return txt;
 }
 
-string Movie::toCsvString()
+string Movie::toCsvString(int &indexNum)
 {
-    string txt = "movie," + name + "," + to_string(duration) + "," + genre + ",";
-    txt += to_string(rating) + "," + to_string(raters);
+    string txt = to_string(indexNum) + ",movie," + name + "," + to_string(duration) + "," + genre + "," + to_string(rating) + "," + to_string(raters) + "\n";
+
+    indexNum += 1;
 
     return txt;
 }

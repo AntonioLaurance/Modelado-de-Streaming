@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 #include "video.h"
 #include "movie.h"
 #include "episode.h"
@@ -26,7 +27,7 @@ class Serie : public Video
 
         // Aditional methods
         string toString();
-        string toCsvString();
+        string toCsvString(int &indexNum);
         float averageRating();
         int totalDuration();
         int totalRaters();

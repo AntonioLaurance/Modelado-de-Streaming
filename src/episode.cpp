@@ -35,10 +35,9 @@ string Episode::toString()
     return txt;
 }
 
-string Episode::toCsvString()
+string Episode::toCsvString(int &indexNum)
 {
-    string txt = "episode," + title + "," + to_string(duration) + "," + genre + ",";
-    txt += to_string(rating) + "," + to_string(raters);
+    string txt = to_string(indexNum) + ",series," + name + "," + to_string(duration) + "," + genre + "," + to_string(rating) + "," + to_string(raters) + "," + title + "," + to_string(season);
 
     return txt;
 }

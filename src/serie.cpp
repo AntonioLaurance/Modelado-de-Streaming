@@ -56,14 +56,9 @@ string Serie::toString()
     return txt;
 }
 
-string Serie::toCsvString()
+string Serie::toCsvString(int &indexNum)
 {
-    string duartion = "";
-    string rating = "";
-    string raters = "";
-    string episodeTitles = "";
-    string numberSeason = "";
-    int season = 1;
+    string txt = "";
     vector<vector<Episode *> >::iterator it;
     vector<Episode *>::iterator chapter;
 
@@ -73,25 +68,10 @@ string Serie::toCsvString()
         // For episode
         for(chapter = (*it).begin(); chapter != (*it).end(); ++chapter)
         {
-            duartion += to_string((*chapter) -> getDuration()) + ";";
-            rating += to_string((*chapter) -> getRating()) + ";";
-            raters += to_string((*chapter) -> getRaters()) + ";";
-            episodeTitles += (*chapter) -> getName() + ";";   
-            numberSeason += to_string(season) + ";";
-        }  
-        season++;
+            txt += (*chapter) -> toCsvString(indexNum) + "\n";
+            indexNum += 1;
+        }
     }
-
-    // Erase the last character of our strings 
-    duartion = duartion.substr(0, duartion.size() - 1);
-    rating = rating.substr(0, rating.size() - 1);
-    raters = raters.substr(0, raters.size() - 1);
-    episodeTitles = episodeTitles.substr(0, episodeTitles.size() - 1);
-    numberSeason = numberSeason.substr(0, numberSeason.size() - 1);
-
-    
-    string txt = "series," + name + "," + duartion + "," + genre + "," + rating + ",";
-    txt += raters + "," + episodeTitles + "," + numberSeason;
 
     return txt;
 }

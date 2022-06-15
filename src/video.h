@@ -41,7 +41,7 @@ class Video
 
 		// Other functions 
 		virtual string toString() = 0;
-		virtual string toCsvString() = 0;
+		virtual string toCsvString(int &indexNumber) = 0;
 		Video* operator + (Video& otherVideo);
 		void addReview(float review);
 };

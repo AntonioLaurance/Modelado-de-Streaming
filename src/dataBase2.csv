@@ -9,4 +9,7 @@ index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers
 8,movie,Turning Red,85,Comedy,4.500000,35235
 9,movie,The Parent Trap,105,Comedy,3.000000,43463
 10,movie,The Beach,95,Mistery,2.500000,25254
-11,series,Breaking Bad,25;32;45;63,Action,4.500000;3.500000;2.500000;4.300000,2341;231;4341;23541,Breaking Bad;Breaking Bad;Breaking Bad;Breaking Bad,1;2;3;4
+11,series,Breaking Bad,25,Action,4.500000,2341,Cap1,1
+12,series,Breaking Bad,32,Action,3.500000,231,Cap2,1
+13,series,Breaking Bad,45,Action,2.500000,4341,Cap1,2
+14,series,Breaking Bad,63,Action,4.300000,23541,Cap1,3

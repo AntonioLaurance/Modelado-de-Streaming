@@ -173,8 +173,7 @@ string Catalogue::toString()
 void Catalogue::toCsv()
 {
     ofstream outputFile;
-    outputFile.open("dataBase2.csv");
-    // 2,series,Breaking Bad,123;35;65;56,Action,4.5;2.2;3.8;4.9,1246;3245;765;9856,Titulo 1;Titulo 2;Titulo 3;Titulo 4,1;1;2;3
+    outputFile.open("dataBase.csv");
     
     // HEADER
     outputFile << "index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers\n";
@@ -183,10 +182,8 @@ void Catalogue::toCsv()
     vector<Video*>::iterator it;
     for(it = videos.begin(); it != videos.end(); ++it)
     {
-        // Do we use the method toCsvString?
         // We can process this polymorphically 
-        outputFile << indexNumber << "," << (*it) -> toCsvString() << endl;
-        indexNumber++;
+        outputFile << (*it) -> toCsvString(indexNumber);
     }
 
     outputFile.close();
