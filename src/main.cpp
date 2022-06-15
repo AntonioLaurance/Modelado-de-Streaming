@@ -248,7 +248,41 @@ int main()
         }
         else if (optionNum == 4)
         {
-            ;
+            vector<Video*> simpleVector = c1 -> toSimpleVector();
+            vector<Video*>::iterator it;
+            vector<string>::iterator itGenre;
+            vector<string> genreVector;
+
+            // Obtenemos todos los generos que hay en la base de datos
+            for(it = simpleVector.begin(); it != simpleVector.end(); it++){
+                genreVector.push_back((*it) -> getGenre());
+            }
+
+            // Eliminamos duplicados en vector
+            sort( genreVector.begin(), genreVector.end() );
+            genreVector.erase( unique( genreVector.begin(), genreVector.end() ), genreVector.end() );
+
+            // Imprimimos los generos existentes
+            cout << "Options: " << endl;
+            int index = 1;
+            for(itGenre = genreVector.begin(); itGenre != genreVector.end(); itGenre++){
+                cout << "\t" << index << ") " << (*itGenre) << endl;
+                index += 1;
+            }
+            
+            string option;
+            int optionInt;
+            cout << "[*] Genre selected: ";
+            cin >> option;
+            optionInt = string2int(option, 1, index);
+
+            string videoGenre;
+            for(it = simpleVector.begin(); it != simpleVector.end(); it++){
+                videoGenre = (*it)->getGenre();
+                if(videoGenre == genreVector[optionInt - 1]){
+                    cout << (*it)->toString() << endl;
+                }
+            }
         }
         else if (optionNum == 5)
         {
