@@ -24,7 +24,6 @@ class Episode: public Video
 		// Overriding methods
 		string toString();
 		string toCsvString(int &indexNum);
-		string toReviewString();
 };
 
 #endif

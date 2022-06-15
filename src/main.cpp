@@ -54,46 +54,9 @@ int main()
             cout << "\n>>> ";
             cin >> election;
 
-            try
-            {
-                i = 1;
-                string videoType = (videos[election - 1] -> getID()).substr(0, 1);
-                if(videoType == "P")
-                {
-                    throw "This is not a series";
-                }
-                else
-                {
-                    int position = election;
-                    Video* B_ptr = &(*videos[election - 1]);
-                    Serie* derived_ptr1=static_cast<Serie*>(B_ptr);
-                    cout << videos[election - 1] -> toReviewString();
-                    cout << "\n>>> ";
-                    cin >> election;
+            string videoType = (videos[election - 1] -> getID()).substr(0, 1);
 
-                    // Ask the user for the rating
-                    cout << "\nRating (0 - 5): ";
-                    cin >> grade;
-
-                    vector<vector<Episode*> > episodes = derived_ptr1->getEpisodes();
-                    vector<vector<Episode*> >::iterator itSeasons;
-                    vector<Episode*>::iterator itEpisodes;
-
-                    int counter = 0;
-                    for(itSeasons = episodes.begin(); itSeasons != episodes.end(); itSeasons++){
-                        for(itEpisodes = (*itSeasons).begin(); itEpisodes != (*itSeasons).end(); itEpisodes++){
-                            counter += 1;
-                            if(counter == election){
-                                (*itEpisodes)->addReview(grade);
-                                break;
-                            }
-                        }
-                    }
-
-                    videos.at(position - 1) = derived_ptr1;
-                }
-            }
-            catch(...)
+            if(videoType == "P")
             {
                 // Ask the user for the rating
                 cout << "\nRating (0 - 5): ";
@@ -102,12 +65,50 @@ int main()
                 // Access to the selected item
                 videos[election - 1] -> addReview(grade);
             }
-            
+            else
+            {
+                int position = election;
+                Serie* series = static_cast<Serie*>(&(*videos[position - 1]));
 
-        } else if(option == 2)
+                vector<vector<Episode*> > seriesEpisodes = series -> getEpisodes();
+
+                int index = 1;
+                vector<vector<Episode*> >::iterator itSeason;
+                vector<Episode*>::iterator itEpisode;
+
+                for(itSeason = seriesEpisodes.begin(); itSeason != seriesEpisodes.end(); itSeason++){
+                    for(itEpisode = (*itSeason).begin(); itEpisode != (*itSeason).end(); itEpisode++){
+                        cout << "\t" <<index << ") " << (*itEpisode)->getTitle() << endl;
+                        index += 1;
+                    }
+                }
+                
+                cout << "\n>>> ";
+                cin >> election;
+
+                // Ask the user for the rating
+                cout << "\nRating (0 - 5): ";
+                cin >> grade;
+
+                int counter = 0;
+                for(itSeason = seriesEpisodes.begin(); itSeason != seriesEpisodes.end(); itSeason++){
+                    for(itEpisode = (*itSeason).begin(); itEpisode != (*itSeason).end(); itEpisode++){
+                        counter += 1;
+                        if(counter == election){
+                            (*itEpisode)->addReview(grade);
+                            break;
+                        }
+                    }
+                }
+                videos.at(position - 1) = series;
+            }
+
+        } 
+        else if(option == 2)
         {
             cout << c1 -> toString() << endl;
-        } else if(option != 3)
+        } 
+        else if(option != 3)
         {
             cout << "Incorrect option." << endl;
         }

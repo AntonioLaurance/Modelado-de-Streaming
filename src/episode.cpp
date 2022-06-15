@@ -45,7 +45,3 @@ string Episode::toCsvString(int &indexNum)
 string Episode::getTitle(){
     return title;
 }
-
-string Episode::toReviewString(){
-    return "";
-}

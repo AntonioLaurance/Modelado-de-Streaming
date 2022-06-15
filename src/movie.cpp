@@ -43,8 +43,3 @@ string Movie::toCsvString(int &indexNum)
 
     return txt;
 }
-
-string Movie::toReviewString()
-{
-    return "";
-}
