@@ -30,9 +30,15 @@ int main()
         
         // Mostramos el menú de acciones para nuestros usuarios
         cout << "Options:" << endl;
-        cout << "\t1) Review any video" << endl;
+        cout << "\t1) Rate any video" << endl;
         cout << "\t2) Show catalogue" << endl;
-        cout << "\t3) Exit" << endl;
+        cout << "\t3) Show movie or episode with a specific rating" << endl;
+        cout << "\t4) Show movie or episode with a specific genre" << endl;
+        cout << "\t5) Show the episodes of a specific series with a specific rating" << endl;
+        cout << "\t6) Show the movies with a specific rating" << endl;
+        cout << "\t7) Show movie or episode with a specific rating" << endl;
+
+        cout << "\t8) Exit" << endl;
         cout << "\n>>> ";
 
         cin >> option;
@@ -82,7 +88,7 @@ int main()
             if(videoType == "P")
             {
                 // Ask the user for the rating
-                cout << "\nRating (0 - 5): ";
+                cout << "\nRating (1 - 5): ";
                 cin >> grade;
 
                 // Access to the selected item
@@ -110,7 +116,7 @@ int main()
                 cin >> election;
 
                 // Ask the user for the rating
-                cout << "\nRating (0 - 5): ";
+                cout << "\nRating (1 - 5): ";
                 cin >> grade;
 
                 int counter = 0;
@@ -130,12 +136,32 @@ int main()
         else if(optionNum == 2)
         {
             cout << c1 -> toString() << endl;
-        } 
-        else if(optionNum == 3)
+        }
+        else if (optionNum == 3)
+        {
+            ;
+        }
+        else if (optionNum == 4)
+        {
+            ;
+        }
+        else if (optionNum == 5)
+        {
+            ;
+        }
+        else if (optionNum == 6)
+        {
+            ;
+        }
+        else if (optionNum == 7)
+        {
+            ;
+        }
+        else if(optionNum == 8)
         {
             break;
         } 
-        else if(optionNum != 3)
+        else if(optionNum != 8)
         {
             cout << "Incorrect option." << endl;
         }
