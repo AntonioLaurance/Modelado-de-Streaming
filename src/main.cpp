@@ -221,7 +221,30 @@ int main()
         }
         else if (optionNum == 3)
         {
-            ;
+            vector<Video*> simpleVector = c1 -> toSimpleVector();
+            vector<Video*>::iterator it;
+
+            string lowerBound, upperBound;
+            float lowerBoundFloat, upperBoundFloat;
+            cout << "[*] Input the Rating lower bound: ";
+
+            cin >> lowerBound;
+
+            lowerBoundFloat = string2float(lowerBound, 1.0f, 5.0f);
+
+            cout << "[*] Input the Rating upper bound: ";
+
+            cin >> upperBound;
+
+            upperBoundFloat = string2float(upperBound, lowerBoundFloat, 5.0f);
+
+            float videoRating;
+            for(it = simpleVector.begin(); it != simpleVector.end(); it++){
+                videoRating = (*it)->getRating();
+                if(videoRating <= upperBoundFloat && videoRating >= lowerBoundFloat){
+                    cout << (*it)->toString() << endl;
+                }
+            }
         }
         else if (optionNum == 4)
         {
