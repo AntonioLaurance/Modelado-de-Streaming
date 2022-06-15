@@ -289,3 +289,26 @@ void Catalogue::organizeDuracionDescendente(){
         }
     }
 } //cierre organizeDuracionDescendente()
+
+vector<Video*> Catalogue::toSimpleVector()
+{
+    vector<Video*> simpleVector;
+    vector<Video*>::iterator itVideos;
+    for(itVideos = videos.begin(); itVideos != videos.end(); itVideos++){
+        string videoType = ((*itVideos) -> getID()).substr(0, 1);
+        if(videoType == "P"){
+            simpleVector.push_back(*itVideos);
+        }else{
+            Serie* series = static_cast<Serie*>(&*(*itVideos));
+            vector<vector<Episode*> > seriesEpisodes = series -> getEpisodes();
+            vector<vector<Episode*> >::iterator itSeasons;
+            vector<Episode*>::iterator itEpisodes;
+            for(itSeasons = seriesEpisodes.begin(); itSeasons != seriesEpisodes.end(); itSeasons++){
+                for(itEpisodes = (*itSeasons).begin(); itEpisodes != (*itSeasons).end(); itEpisodes++){
+                    simpleVector.push_back(*itEpisodes);
+                }
+            }
+        }
+    }
+    return simpleVector;
+}

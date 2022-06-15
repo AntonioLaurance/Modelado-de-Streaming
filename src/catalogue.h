@@ -29,6 +29,7 @@ class Catalogue
         // Other methods
         string toString();
         void toCsv();
+        vector<Video*> toSimpleVector();
         void organizeRatingAscendente(); //metodo para ordenar videos de mayor a menor
         void organizeRatingDescendente(); //metodo para ordenar videos de mayor a menor
         void organizeRatersDescendente();
