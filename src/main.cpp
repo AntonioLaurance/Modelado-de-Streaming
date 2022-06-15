@@ -239,11 +239,21 @@ int main()
             upperBoundFloat = string2float(upperBound, lowerBoundFloat, 5.0f);
 
             float videoRating;
+            string txt = "";
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
                 videoRating = (*it)->getRating();
                 if(videoRating <= upperBoundFloat && videoRating >= lowerBoundFloat){
-                    cout << (*it)->toString() << endl;
+                    txt +=  (*it)->toString() + "\n";
                 }
+            }
+
+            if(txt.size() == 0)
+            {
+                cout << "No matches found!" << endl << endl;
+            }
+            else
+            {
+                cout << txt << endl;
             }
         }
         else if (optionNum == 4)
@@ -276,12 +286,21 @@ int main()
             cin >> option;
             optionInt = string2int(option, 1, index);
 
-            string videoGenre;
+            string videoGenre, txt = "";
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
                 videoGenre = (*it)->getGenre();
                 if(videoGenre == genreVector[optionInt - 1]){
-                    cout << (*it)->toString() << endl;
+                    txt +=  (*it)->toString() + "\n";
                 }
+            }
+
+            if(txt.size() == 0)
+            {
+                cout << "No matches found!" << endl << endl;
+            }
+            else
+            {
+                cout << txt << endl;
             }
         }
         else if (optionNum == 5)
@@ -334,20 +353,67 @@ int main()
 
             upperBoundFloat = string2float(upperBound, lowerBoundFloat, 5.0f);
 
-            string currentVideoName;
+            string currentVideoName, txt = "";
             float currentVideoRating;
             // Recorrempos simpleVector y buscamos videos con las características establecidas
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
                 currentVideoName = (*it)->getName();
                 currentVideoRating = (*it)->getRating();
                 if(currentVideoName == seriesVector[optionInt - 1] && (currentVideoRating <= upperBoundFloat && currentVideoRating >= lowerBoundFloat)){
-                    cout << (*it)->toString() << endl;
+                    txt += (*it)->toString() + "\n";
                 }
+            }
+
+            if(txt.size() == 0)
+            {
+                cout << "No matches found!" << endl << endl;
+            }
+            else
+            {
+                cout << txt << endl;
             }
         }
         else if (optionNum == 6)
         {
-            ;
+            vector<Video*> simpleVector = c1 -> toSimpleVector();
+            vector<Video*>::iterator it;
+            vector<string>::iterator itMovies;
+
+            string lowerBound, upperBound;
+            float lowerBoundFloat, upperBoundFloat;
+            cout << "[*] Input the Rating lower bound: ";
+
+            cin >> lowerBound;
+
+            lowerBoundFloat = string2float(lowerBound, 1.0f, 5.0f);
+
+            cout << "[*] Input the Rating upper bound: ";
+
+            cin >> upperBound;
+
+            upperBoundFloat = string2float(upperBound, lowerBoundFloat, 5.0f);
+
+            // Obtenemos todas las películas que hay en la base de datos con las características analizadas
+            string videoType, txt = "";
+            float movieRating;
+            for(it = simpleVector.begin(); it != simpleVector.end(); it++){
+                videoType = ((*it) -> getID()).substr(0, 1);
+                if(videoType == "P"){
+                    movieRating = (*it) -> getRating();
+                    if(movieRating <= upperBoundFloat && movieRating >= lowerBoundFloat){
+                        txt += (*it)->toString() + "\n";
+                    }
+                }
+            }
+
+            if(txt.size() == 0)
+            {
+                cout << "No matches found!" << endl << endl;
+            }
+            else
+            {
+                cout << txt << endl;
+            }
         }
         else if (optionNum == 7)
         {

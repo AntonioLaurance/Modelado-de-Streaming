@@ -1,15 +1,62 @@
 index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers
-1,movie,El Lobo de Wallstreet,123,Action,4.000000,1246
-2,movie,Mi Villano Favorito,63,Comedy,2.000000,6632
-3,movie,Lluvia de Hamburguesas,90,Action,4.000000,14937
-4,movie,Jurassic Park,147,Action,4.000000,32234
-5,movie,Intensamente,92,Kids,3.700000,23523
-6,movie,Transformers,127,Action,4.000000,457457
-7,movie,Space Jam,90,Comedy,2.000000,141
-8,movie,Turning Red,85,Comedy,4.500000,35235
-9,movie,The Parent Trap,105,Comedy,2.999954,43464
-10,series,Breaking Bad,25,asdfghjk,4.497865,2343,Cap1,1
-11,series,Breaking Bad,32,asdfghjk,3.491417,233,Cap2,1
-12,series,Breaking Bad,45,Action,2.500805,4344,Cap1,2
-13,series,Breaking Bad,63,Action,4.299847,23543,Cap1,3
-14,movie,The Beach,95,Mistery,2.499980,25255
+1,movie,El Lobo de Wallstreet,123,Action,4.790000,264
+2,movie,Mi Villano Favorito,63,Comedy,3.320000,188
+3,movie,Lluvia de Hamburguesas,90,Action,4.760000,63
+4,movie,Jurassic Park,147,Action,2.070000,87
+5,movie,Intensamente,92,Kids,2.370000,191
+6,movie,Transformers,127,Action,1.650000,273
+7,movie,Space Jam,90,Comedy,3.510000,262
+8,movie,Turning Red,85,Comedy,1.970000,184
+9,movie,The Parent Trap,105,Comedy,2.400000,298
+10,movie,The Beach,95,Mistery,2.270000,170
+11,series,Breaking Bad,50,Action,4.570000,173,Pilot,1
+12,series,Breaking Bad,51,Action,3.340000,148,Cat's in the Bag...,1
+13,series,Breaking Bad,28,Action,2.970000,174,...and the Bag's in the River,1
+14,series,Breaking Bad,36,Action,3.270000,103,Cancer Man,2
+15,series,Breaking Bad,46,Action,1.700000,200,Gray Matter,2
+16,series,Breaking Bad,45,Action,2.550000,223,Crazy Handful of Nothin',2
+17,series,Breaking Bad,56,Action,3.790000,268,A No-Rough-Stuff-Type Deal,3
+18,series,Breaking Bad,45,Action,1.350000,258,Seven Thirty-Seven,3
+19,series,Breaking Bad,38,Action,3.860000,26,Grilled,3
+20,series,Breaking Bad,42,Action,3.200000,173,Bit by a Dead Bee,4
+21,series,Breaking Bad,34,Action,4.820000,250,Down,4
+22,series,Breaking Bad,42,Action,3.240000,224,Breakage,4
+23,series,Breaking Bad,37,Action,2.370000,82,Peekaboo,5
+24,series,Breaking Bad,25,Action,3.120000,259,Negro y Azul,5
+25,series,Breaking Bad,51,Action,1.080000,237,Better Call Saul,5
+26,series,Breaking Bad,58,Action,4.980000,169,4 Days Out,6
+27,series,Breaking Bad,36,Action,3.400000,270,Over,6
+28,series,Breaking Bad,47,Action,1.840000,187,Mandala,6
+29,series,Breaking Bad,43,Action,4.980000,174,Phoenix,7
+30,series,Breaking Bad,30,Action,2.090000,109,ABQ,7
+31,series,Bones,37,Drama,3.630000,127,Pilot,1
+32,series,Bones,42,Drama,3.330000,148,The Man in the S.U.V.,1
+33,series,Bones,60,Drama,1.610000,76,A Boy in a Tree,1
+34,series,Bones,49,Drama,4.130000,67,The Man in the Bear,2
+35,series,Bones,44,Drama,4.330000,53,A Boy in a Bush,2
+36,series,Bones,43,Drama,4.920000,140,The Man in the Wall,2
+37,series,Bones,29,Drama,1.620000,299,A Man on Death Row,3
+38,series,Bones,36,Drama,4.850000,24,The Girl in the Fridge,3
+39,series,Bones,42,Drama,3.500000,169,The Man in the Fallout Shelter,3
+40,series,Bones,53,Drama,3.170000,295,The Woman at the Airport,4
+41,series,Bones,51,Drama,3.640000,147,The Woman in the Car,4
+42,series,Bones,35,Drama,3.980000,268,The Superhero in the Alley,4
+43,series,Bones,43,Drama,1.400000,250,The Woman in the Garden,5
+44,series,Bones,28,Drama,3.450000,256,The Man on the Fairway,5
+45,series,Bones,25,Drama,4.090000,34,Two Bodies in the Lab,5
+46,series,Bones,54,Drama,1.640000,50,The Woman in the Tunnel,6
+47,series,Bones,29,Drama,3.650000,154,The Skull in the Desert,6
+48,series,Bones,31,Drama,4.190000,45,The Man with the Bone,6
+49,series,Bones,41,Drama,1.520000,59,The Man in the Morgue,7
+50,series,Bones,59,Drama,1.780000,192,The Graft in the Girl,7
+51,series,Bones,34,Drama,2.520000,144,The Soldier on the Grave,7
+52,series,Bones,32,Drama,2.660000,286,The Woman in Limbo,8
+53,series,Squid Game,47,Mistery,4.670000,281,Mugunghwa kkoch-i pideon nal,1
+54,series,Squid Game,37,Mistery,1.430000,52,Ji-ok,1
+55,series,Squid Game,30,Mistery,1.130000,204,Usan-eul sseun namja,1
+56,series,Squid Game,42,Mistery,1.830000,41,Jjollyeodo pyeonmeokgi,1
+57,series,Squid Game,55,Mistery,1.970000,159,Pyeongdeung-han sesang,1
+58,series,Squid Game,36,Mistery,2.280000,39,Kkanbu,1
+59,series,Squid Game,32,Mistery,1.270000,287,VIPS,1
+60,series,Squid Game,50,Mistery,1.990000,114,Peulonteu maen,1
+61,series,Squid Game,31,Mistery,3.770000,259,Unsu joeun nal,1
