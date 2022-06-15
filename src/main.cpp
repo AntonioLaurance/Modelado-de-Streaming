@@ -11,12 +11,85 @@ bool isnumber(string str){
     bool res = true;
     string::iterator it;
     for(it = str.begin(); it != str.end(); it++){
+        if(*it == '.'){
+            continue;
+        }
         res = res && isdigit(*it);
         if(!res){
             break;
         }
     }
     return res;
+}
+
+int string2int(string someValue, int lowerLim, int upperLim){
+    int someValueInt;
+    while(true){
+        try
+        {
+            if(!isnumber(someValue))
+            {
+                throw "Dato no numérico introducido";
+            }
+            else
+            {
+                stringstream ss;
+                ss << someValue;
+                ss >> someValueInt;
+                if(someValueInt > upperLim || someValueInt < lowerLim)
+                {
+                    throw "Dato numérico mayor o menor a los posibles introducido";
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        catch(...)
+        {
+            cout << "The input data is not a number or is out of bounds" << endl;
+            cout << "\n>>> ";
+            someValue.clear();
+        }
+        cin >> someValue;
+    }
+    return someValueInt;
+}
+
+float string2float(string someValue, float lowerLim, float upperLim){
+    float someValueFloat;
+    while(true){
+        try
+        {
+            if(!isnumber(someValue))
+            {
+                throw "Dato no numérico introducido";
+            }
+            else
+            {
+                stringstream ss;
+                ss << someValue;
+                ss >> someValueFloat;
+                if(someValueFloat > upperLim || someValueFloat < lowerLim)
+                {
+                    throw "Dato numérico mayor o menor a los posibles introducido";
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        catch(...)
+        {
+            cout << "The input data is not a number or is out of bounds" << endl;
+            cout << "\n>>> ";
+            someValue.clear();
+        }
+        cin >> someValue;
+    }
+    return someValueFloat;
 }
 
 int main()
@@ -69,8 +142,9 @@ int main()
         {
             vector<Video *> videos = c1 -> getVideos();
             vector<Video *>::iterator it;
-            int i = 1, election;  // [Counter, election of video to rank]
-            float grade;
+            int i = 1, electionNum, gradeNum;  // [Counter, election of video to rank]
+            string grade;
+            string election;
 
             cout << "Choose the video that you want to review:" << endl;
 
@@ -83,7 +157,9 @@ int main()
             cout << "\n>>> ";
             cin >> election;
 
-            string videoType = (videos[election - 1] -> getID()).substr(0, 1);
+            electionNum = string2int(election, 1, i);
+
+            string videoType = (videos[electionNum - 1] -> getID()).substr(0, 1);
 
             if(videoType == "P")
             {
@@ -91,12 +167,14 @@ int main()
                 cout << "\nRating (1 - 5): ";
                 cin >> grade;
 
+                gradeNum = string2float(grade, 1.0f, 5.0f);
+
                 // Access to the selected item
-                videos[election - 1] -> addReview(grade);
+                videos[electionNum - 1] -> addReview(gradeNum);
             }
             else
             {
-                int position = election;
+                int position = electionNum;
                 Serie* series = static_cast<Serie*>(&(*videos[position - 1]));
 
                 vector<vector<Episode*> > seriesEpisodes = series -> getEpisodes();
@@ -115,16 +193,20 @@ int main()
                 cout << "\n>>> ";
                 cin >> election;
 
+                electionNum = string2int(election, 1, index);
+
                 // Ask the user for the rating
                 cout << "\nRating (1 - 5): ";
                 cin >> grade;
+
+                gradeNum = string2float(grade, 1.0f, 5.0f);
 
                 int counter = 0;
                 for(itSeason = seriesEpisodes.begin(); itSeason != seriesEpisodes.end(); itSeason++){
                     for(itEpisode = (*itSeason).begin(); itEpisode != (*itSeason).end(); itEpisode++){
                         counter += 1;
-                        if(counter == election){
-                            (*itEpisode)->addReview(grade);
+                        if(counter == electionNum){
+                            (*itEpisode)->addReview(gradeNum);
                             break;
                         }
                     }
