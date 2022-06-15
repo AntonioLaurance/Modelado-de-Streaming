@@ -56,6 +56,22 @@ string Serie::toString()
     return txt;
 }
 
+string Serie::toReviewString(){
+    int index = 1;
+    string txt = "";
+    vector<vector<Episode*> >::iterator itSeasons;
+    vector<Episode*>::iterator itEpisodes;
+
+    for(itSeasons = episodes.begin(); itSeasons != episodes.end(); itSeasons++){
+        for(itEpisodes = (*itSeasons).begin(); itEpisodes != (*itSeasons).end(); itEpisodes++){
+            txt += "\t" + to_string(index) + ") " + (*itEpisodes)->getTitle() + "\n";
+            index += 1;
+        }
+
+    }
+    return txt;
+}
+
 string Serie::toCsvString(int &indexNum)
 {
     string txt = "";

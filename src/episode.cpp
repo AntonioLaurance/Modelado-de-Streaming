@@ -41,3 +41,11 @@ string Episode::toCsvString(int &indexNum)
 
     return txt;
 }
+
+string Episode::getTitle(){
+    return title;
+}
+
+string Episode::toReviewString(){
+    return "";
+}

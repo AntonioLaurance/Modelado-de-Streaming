@@ -43,7 +43,7 @@ int main()
             int i = 1, election;  // [Counter, election of video to rank]
             float grade;
 
-            cout << "Chosse the video that you want to review:" << endl;
+            cout << "Choose the video that you want to review:" << endl;
 
             for(it = videos.begin(); it != videos.end(); ++it)
             {
@@ -54,12 +54,55 @@ int main()
             cout << "\n>>> ";
             cin >> election;
 
-            // Ask the user for the rating
-            cout << "\nRating (0 - 5): ";
-            cin >> grade;
+            try
+            {
+                i = 1;
+                string videoType = (videos[election - 1] -> getID()).substr(0, 1);
+                if(videoType == "P")
+                {
+                    throw "This is not a series";
+                }
+                else
+                {
+                    int position = election;
+                    Video* B_ptr = &(*videos[election - 1]);
+                    Serie* derived_ptr1=static_cast<Serie*>(B_ptr);
+                    cout << videos[election - 1] -> toReviewString();
+                    cout << "\n>>> ";
+                    cin >> election;
 
-            // Access to the selected item
-            videos[election - 1] -> addReview(grade);
+                    // Ask the user for the rating
+                    cout << "\nRating (0 - 5): ";
+                    cin >> grade;
+
+                    vector<vector<Episode*> > episodes = derived_ptr1->getEpisodes();
+                    vector<vector<Episode*> >::iterator itSeasons;
+                    vector<Episode*>::iterator itEpisodes;
+
+                    int counter = 0;
+                    for(itSeasons = episodes.begin(); itSeasons != episodes.end(); itSeasons++){
+                        for(itEpisodes = (*itSeasons).begin(); itEpisodes != (*itSeasons).end(); itEpisodes++){
+                            counter += 1;
+                            if(counter == election){
+                                (*itEpisodes)->addReview(grade);
+                                break;
+                            }
+                        }
+                    }
+
+                    videos.at(position - 1) = derived_ptr1;
+                }
+            }
+            catch(...)
+            {
+                // Ask the user for the rating
+                cout << "\nRating (0 - 5): ";
+                cin >> grade;
+
+                // Access to the selected item
+                videos[election - 1] -> addReview(grade);
+            }
+            
 
         } else if(option == 2)
         {

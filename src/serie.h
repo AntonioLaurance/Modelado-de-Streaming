@@ -27,6 +27,7 @@ class Serie : public Video
 
         // Aditional methods
         string toString();
+        string toReviewString();
         string toCsvString(int &indexNum);
         float averageRating();
         int totalDuration();
