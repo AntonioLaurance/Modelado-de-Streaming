@@ -4,9 +4,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "video.h"
+#include "content.h"
 
-class Episode: public Video
+class Episode: public Content
 {
 	private:
 		string title;

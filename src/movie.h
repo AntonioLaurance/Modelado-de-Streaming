@@ -2,9 +2,9 @@
 #define __MOVIE
 
 #pragma once
-#include "video.h"
+#include "content.h"
 
-class Movie: public Video
+class Movie: public Content
 {
     public:
         // Constructors & Destructor 

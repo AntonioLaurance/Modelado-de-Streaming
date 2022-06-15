@@ -1,5 +1,5 @@
-#ifndef __VIDEO
-#define __VIDEO
+#ifndef __CONTENT
+#define __CONTENT
 
 #pragma once
 #include <iostream>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Video
+class Content
 {
 	protected:
 		string ID;
@@ -19,9 +19,9 @@ class Video
 
 	public:
 		// Constructor & Destructor
-		Video();
-		Video(string ID, string name, int duration, string genre, float rating, int raters);
-		~Video();
+		Content();
+		Content(string ID, string name, int duration, string genre, float rating, int raters);
+		~Content();
 
 		// Getters
 		string getID();
@@ -42,7 +42,7 @@ class Video
 		// Other functions 
 		virtual string toString() = 0;
 		virtual string toCsvString(int &indexNumber) = 0;
-		Video* operator + (Video& otherVideo);
+		Content* operator + (Content& otherContent);
 		void addReview(float review);
 };
 

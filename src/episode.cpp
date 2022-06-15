@@ -1,12 +1,12 @@
 #include "episode.h"
 
-Episode::Episode() : Video()
+Episode::Episode() : Content()
 {
 	title = "";
 	season = 0;
 }
 
-Episode::Episode(string ID, string name, int duration, string genre, float rating, int raters, string title, int season) : Video(ID, name, duration, genre, rating, raters)
+Episode::Episode(string ID, string name, int duration, string genre, float rating, int raters, string title, int season) : Content(ID, name, duration, genre, rating, raters)
 {
 	this -> title = title;
 	this -> season = season;
