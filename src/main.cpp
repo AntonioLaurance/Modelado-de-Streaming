@@ -109,9 +109,7 @@ int main()
         cout << "\t4) Show movie or episode with a specific genre" << endl;
         cout << "\t5) Show the episodes of a specific series with a specific rating" << endl;
         cout << "\t6) Show the movies with a specific rating" << endl;
-        cout << "\t7) Show movie or episode with a specific rating" << endl;
-
-        cout << "\t8) Exit" << endl;
+        cout << "\t7) Exit" << endl;
         cout << "\n>>> ";
 
         cin >> option;
@@ -415,11 +413,7 @@ int main()
                 cout << txt << endl;
             }
         }
-        else if (optionNum == 7)
-        {
-            ;
-        }
-        else if(optionNum == 8)
+        else if(optionNum == 7)
         {
             break;
         } 
