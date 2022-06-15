@@ -1,11 +1,11 @@
 #include "movie.h"
 
-Movie::Movie() : Video()
+Movie::Movie() : Content()
 {
     ; // Null statement
 }
 
-Movie::Movie(string ID, string name, int duration, string genre, float rating, int raters): Video(ID, name, duration, genre, rating, raters)
+Movie::Movie(string ID, string name, int duration, string genre, float rating, int raters): Content(ID, name, duration, genre, rating, raters)
 {
     ; // Null statement
 }

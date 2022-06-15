@@ -1,11 +1,11 @@
 #include "serie.h"
 
-Serie::Serie() : Video()
+Serie::Serie() : Content()
 {
     seasons = 0;
 }
 
-Serie::Serie(string ID, string name, string genre, vector<vector<Episode*> > episodes) : Video()
+Serie::Serie(string ID, string name, string genre, vector<vector<Episode*> > episodes) : Content()
 {
     this -> episodes = episodes;
     seasons = episodes.size();
@@ -89,7 +89,7 @@ float Serie::averageRating()
         {
             for(itSeason = (*itEpisodes).begin(); itSeason != (*itEpisodes).end(); itSeason += 2)
             {
-                Video* res = (*(*itSeason) + *(*(itSeason + 1)));
+                Content* res = (*(*itSeason) + *(*(itSeason + 1)));
                 
                 totalRating += res->getRating();
                 totalRaters += res->getRaters();
@@ -102,7 +102,7 @@ float Serie::averageRating()
         {
             for(itSeason = (*itEpisodes).begin(); itSeason != (*itEpisodes).end() - 1; itSeason += 2)
             {
-                Video* res = (*(*itSeason) + *(*(itSeason + 1)));
+                Content* res = (*(*itSeason) + *(*(itSeason + 1)));
 
                 totalRating += res->getRating();
                 totalRaters += res->getRaters();
@@ -111,7 +111,7 @@ float Serie::averageRating()
                 totalEpisodes += 2;
             }
             
-            Video* res = (*(*itSeason) + *(*itSeason));
+            Content* res = (*(*itSeason) + *(*itSeason));
                 
             totalRating += res->getRating() / 2;
             totalRaters += res->getRaters() / 2;

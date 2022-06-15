@@ -6,11 +6,11 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include "video.h"
+#include "content.h"
 #include "movie.h"
 #include "episode.h"
 
-class Serie : public Video
+class Serie : public Content
 {
     private:
         vector<vector<Episode*> > episodes;

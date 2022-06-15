@@ -1,7 +1,7 @@
 
 /* ACTUALMENTE ESTE MAIN ES DE PRUEBA Y PARA PROBAR EL CODIGO Y SU FUNCIONAMIENTO */
 #include <ctype.h>
-#include "video.h"
+#include "content.h"
 #include "movie.h"
 #include "episode.h"
 #include "serie.h"
@@ -103,15 +103,13 @@ int main()
         
         // Mostramos el menú de acciones para nuestros usuarios
         cout << "Options:" << endl;
-        cout << "\t1) Rate any video" << endl;
+        cout << "\t1) Rate any Content" << endl;
         cout << "\t2) Show catalogue" << endl;
         cout << "\t3) Show movie or episode with a specific rating" << endl;
         cout << "\t4) Show movie or episode with a specific genre" << endl;
         cout << "\t5) Show the episodes of a specific series with a specific rating" << endl;
         cout << "\t6) Show the movies with a specific rating" << endl;
-        cout << "\t7) Show movie or episode with a specific rating" << endl;
-
-        cout << "\t8) Exit" << endl;
+        cout << "\t7) Exit" << endl;
         cout << "\n>>> ";
 
         cin >> option;
@@ -140,15 +138,15 @@ int main()
 
         if(optionNum == 1)
         {
-            vector<Video *> videos = c1 -> getVideos();
-            vector<Video *>::iterator it;
-            int i = 1, electionNum, gradeNum;  // [Counter, election of video to rank]
+            vector<Content *> contents = c1 -> getContents();
+            vector<Content *>::iterator it;
+            int i = 1, electionNum, gradeNum;  // [Counter, election of Content to rank]
             string grade;
             string election;
 
-            cout << "Choose the video that you want to review:" << endl;
+            cout << "Choose the Content that you want to review:" << endl;
 
-            for(it = videos.begin(); it != videos.end(); ++it)
+            for(it = contents.begin(); it != contents.end(); ++it)
             {
                 cout << "\t" << i << ") " << (*it) -> getName() << endl;
                 i++;
@@ -159,9 +157,9 @@ int main()
 
             electionNum = string2int(election, 1, i);
 
-            string videoType = (videos[electionNum - 1] -> getID()).substr(0, 1);
+            string contentType = (contents[electionNum - 1] -> getID()).substr(0, 1);
 
-            if(videoType == "P")
+            if(contentType == "P")
             {
                 // Ask the user for the rating
                 cout << "\nRating (1 - 5): ";
@@ -170,12 +168,12 @@ int main()
                 gradeNum = string2float(grade, 1.0f, 5.0f);
 
                 // Access to the selected item
-                videos[electionNum - 1] -> addReview(gradeNum);
+                contents[electionNum - 1] -> addReview(gradeNum);
             }
             else
             {
                 int position = electionNum;
-                Serie* series = static_cast<Serie*>(&(*videos[position - 1]));
+                Serie* series = static_cast<Serie*>(&(*contents[position - 1]));
 
                 vector<vector<Episode*> > seriesEpisodes = series -> getEpisodes();
 
@@ -211,7 +209,7 @@ int main()
                         }
                     }
                 }
-                videos.at(position - 1) = series;
+                contents.at(position - 1) = series;
             }
 
         } 
@@ -221,8 +219,8 @@ int main()
         }
         else if (optionNum == 3)
         {
-            vector<Video*> simpleVector = c1 -> toSimpleVector();
-            vector<Video*>::iterator it;
+            vector<Content*> simpleVector = c1 -> toSimpleVector();
+            vector<Content*>::iterator it;
 
             string lowerBound, upperBound;
             float lowerBoundFloat, upperBoundFloat;
@@ -238,18 +236,28 @@ int main()
 
             upperBoundFloat = string2float(upperBound, lowerBoundFloat, 5.0f);
 
-            float videoRating;
+            float contentRating;
+            string txt = "";
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
-                videoRating = (*it)->getRating();
-                if(videoRating <= upperBoundFloat && videoRating >= lowerBoundFloat){
-                    cout << (*it)->toString() << endl;
+                contentRating = (*it)->getRating();
+                if(contentRating <= upperBoundFloat && contentRating >= lowerBoundFloat){
+                    txt +=  (*it)->toString() + "\n";
                 }
+            }
+
+            if(txt.size() == 0)
+            {
+                cout << "No matches found!" << endl << endl;
+            }
+            else
+            {
+                cout << txt << endl;
             }
         }
         else if (optionNum == 4)
         {
-            vector<Video*> simpleVector = c1 -> toSimpleVector();
-            vector<Video*>::iterator it;
+            vector<Content*> simpleVector = c1 -> toSimpleVector();
+            vector<Content*>::iterator it;
             vector<string>::iterator itGenre;
             vector<string> genreVector;
 
@@ -276,26 +284,35 @@ int main()
             cin >> option;
             optionInt = string2int(option, 1, index);
 
-            string videoGenre;
+            string contentGenre, txt = "";
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
-                videoGenre = (*it)->getGenre();
-                if(videoGenre == genreVector[optionInt - 1]){
-                    cout << (*it)->toString() << endl;
+                contentGenre = (*it)->getGenre();
+                if(contentGenre == genreVector[optionInt - 1]){
+                    txt +=  (*it)->toString() + "\n";
                 }
+            }
+
+            if(txt.size() == 0)
+            {
+                cout << "No matches found!" << endl << endl;
+            }
+            else
+            {
+                cout << txt << endl;
             }
         }
         else if (optionNum == 5)
         {
-            vector<Video*> simpleVector = c1 -> toSimpleVector();
-            vector<Video*>::iterator it;
+            vector<Content*> simpleVector = c1 -> toSimpleVector();
+            vector<Content*>::iterator it;
             vector<string>::iterator itSeries;
             vector<string> seriesVector;
-            string videoType;
+            string contentType;
 
             // Obtenemos todas las sreies que hay en la base de datos
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
-                videoType = ((*it) -> getID()).substr(0, 1);
-                if(videoType == "S"){
+                contentType = ((*it) -> getID()).substr(0, 1);
+                if(contentType == "S"){
                     seriesVector.push_back((*it)->getName());
                 }
             }
@@ -334,26 +351,69 @@ int main()
 
             upperBoundFloat = string2float(upperBound, lowerBoundFloat, 5.0f);
 
-            string currentVideoName;
-            float currentVideoRating;
-            // Recorrempos simpleVector y buscamos videos con las características establecidas
+            string currentContentName, txt = "";
+            float currentContentRating;
+            // Recorrempos simpleVector y buscamos Contents con las características establecidas
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
-                currentVideoName = (*it)->getName();
-                currentVideoRating = (*it)->getRating();
-                if(currentVideoName == seriesVector[optionInt - 1] && (currentVideoRating <= upperBoundFloat && currentVideoRating >= lowerBoundFloat)){
-                    cout << (*it)->toString() << endl;
+                currentContentName = (*it)->getName();
+                currentContentRating = (*it)->getRating();
+                if(currentContentName == seriesVector[optionInt - 1] && (currentContentRating <= upperBoundFloat && currentContentRating >= lowerBoundFloat)){
+                    txt += (*it)->toString() + "\n";
                 }
+            }
+
+            if(txt.size() == 0)
+            {
+                cout << "No matches found!" << endl << endl;
+            }
+            else
+            {
+                cout << txt << endl;
             }
         }
         else if (optionNum == 6)
         {
-            ;
+            vector<Content*> simpleVector = c1 -> toSimpleVector();
+            vector<Content*>::iterator it;
+            vector<string>::iterator itMovies;
+
+            string lowerBound, upperBound;
+            float lowerBoundFloat, upperBoundFloat;
+            cout << "[*] Input the Rating lower bound: ";
+
+            cin >> lowerBound;
+
+            lowerBoundFloat = string2float(lowerBound, 1.0f, 5.0f);
+
+            cout << "[*] Input the Rating upper bound: ";
+
+            cin >> upperBound;
+
+            upperBoundFloat = string2float(upperBound, lowerBoundFloat, 5.0f);
+
+            // Obtenemos todas las películas que hay en la base de datos con las características analizadas
+            string contentType, txt = "";
+            float movieRating;
+            for(it = simpleVector.begin(); it != simpleVector.end(); it++){
+                contentType = ((*it) -> getID()).substr(0, 1);
+                if(contentType == "P"){
+                    movieRating = (*it) -> getRating();
+                    if(movieRating <= upperBoundFloat && movieRating >= lowerBoundFloat){
+                        txt += (*it)->toString() + "\n";
+                    }
+                }
+            }
+
+            if(txt.size() == 0)
+            {
+                cout << "No matches found!" << endl << endl;
+            }
+            else
+            {
+                cout << txt << endl;
+            }
         }
-        else if (optionNum == 7)
-        {
-            ;
-        }
-        else if(optionNum == 8)
+        else if(optionNum == 7)
         {
             break;
         } 

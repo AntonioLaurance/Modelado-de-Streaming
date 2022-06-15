@@ -3,27 +3,27 @@
 Catalogue::Catalogue(string fileName)
 {
     // Leemos el csv y guardamos los datos en un vector de vectores de string
-    // Por cada video hacemos una nueva linea
+    // Por cada content hacemos una nueva linea
     ifstream inputFile;
     inputFile.open(fileName);
 
     string line = "", cell = "";
     vector<vector<string> > catalogueData;
-    vector<string> videoData;
+    vector<string> contentData;
     while(getline(inputFile, line))
     {
-        videoData.clear();
+        contentData.clear();
         stringstream s(line);
         while (getline(s, cell, ','))
         {
-            videoData.push_back(cell);
+            contentData.push_back(cell);
         }
-        catalogueData.push_back(videoData);
+        catalogueData.push_back(contentData);
     }
     inputFile.close();
 
     // recorremos el vector catalogueData, instanciamos objetos de tipo Movie,
-    // Episode y Serie y guardamos todo eso en el vector videos
+    // Episode y Serie y guardamos todo eso en el vector contents
     vector<vector<string> >::iterator itCatalogueData;
     string movieType = "movie";
     string seriesType = "series";
@@ -51,7 +51,7 @@ Catalogue::Catalogue(string fileName)
             ssrs << (*itCatalogueData)[6];
             ssrs >> raters;
 
-            videos.push_back(new Movie(ID, name, duration, genre, rating, raters));
+            contents.push_back(new Movie(ID, name, duration, genre, rating, raters));
         }
         else if((*itCatalogueData)[1] == seriesType)
         {
@@ -94,7 +94,7 @@ Catalogue::Catalogue(string fileName)
                         episodesSeason.push_back(new Episode(IdEpisode, name, duration, genre, rating, raters, title, season));
                         episodesSeries.push_back(episodesSeason);
                         episodesSeason.clear();
-                        videos.push_back(new Serie(IdSeries, name, genre, episodesSeries));
+                        contents.push_back(new Serie(IdSeries, name, genre, episodesSeries));
                         episodeNum = 1;
                         episodesSeries.clear();
                     }
@@ -120,7 +120,7 @@ Catalogue::Catalogue(string fileName)
                     episodesSeason.push_back(new Episode(IdEpisode, name, duration, genre, rating, raters, title, season));
                     episodesSeries.push_back(episodesSeason);
                     episodesSeason.clear();
-                    videos.push_back(new Serie(IdSeries, name, genre, episodesSeries));
+                    contents.push_back(new Serie(IdSeries, name, genre, episodesSeries));
                     episodeNum = 1;
                     episodesSeries.clear();
                 }
@@ -132,7 +132,7 @@ Catalogue::Catalogue(string fileName)
                 episodesSeason.push_back(new Episode(IdEpisode, name, duration, genre, rating, raters, title, season));
                 episodesSeries.push_back(episodesSeason);
                 episodesSeason.clear();
-                videos.push_back(new Serie(IdSeries, name, genre, episodesSeries));
+                contents.push_back(new Serie(IdSeries, name, genre, episodesSeries));
                 episodeNum = 1;
                 episodesSeries.clear();
             }
@@ -142,17 +142,17 @@ Catalogue::Catalogue(string fileName)
 
 Catalogue::~Catalogue()
 {
-    videos.clear(); 
+    contents.clear(); 
 }
 
-vector<Video *> Catalogue::getVideos()
+vector<Content *> Catalogue::getContents()
 {
-    return videos;
+    return contents;
 }
 
-void Catalogue::setVideos(vector<Video *> videos)
+void Catalogue::setContents(vector<Content *> contents)
 {
-    this -> videos = videos;
+    this -> contents = contents;
 }
 
 string Catalogue::toString()
@@ -162,8 +162,8 @@ string Catalogue::toString()
     txt += "# CATALOGUE #\n";
     txt += "#############\n\n";
 
-    vector<Video*>::iterator it;
-    for(it = videos.begin(); it != videos.end(); it++){
+    vector<Content*>::iterator it;
+    for(it = contents.begin(); it != contents.end(); it++){
         txt += (*it)->toString();
         txt += "\n\n";
     }
@@ -179,8 +179,8 @@ void Catalogue::toCsv()
     outputFile << "index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers\n";
     
     int indexNumber = 1;
-    vector<Video*>::iterator it;
-    for(it = videos.begin(); it != videos.end(); ++it)
+    vector<Content*>::iterator it;
+    for(it = contents.begin(); it != contents.end(); ++it)
     {
         // We can process this polymorphically 
         outputFile << (*it) -> toCsvString(indexNumber);
@@ -189,16 +189,16 @@ void Catalogue::toCsv()
     outputFile.close();
 }
 
-void Catalogue::organizeRatingAscendente(){ //metodo para ordenar videos de mayor a menor RATING
-    Video *auxiliar;
+void Catalogue::organizeRatingAscendente(){ //metodo para ordenar contents de mayor a menor RATING
+    Content *auxiliar;
     
-    for (int i=0;i<this->videos.size();i++){
-        for(int j=0;j<this->videos.size()-1;j++){
-            if (this->videos.at(j)->getRating() > this->videos.at(j+1)->getRating()){
+    for (int i=0;i<this->contents.size();i++){
+        for(int j=0;j<this->contents.size()-1;j++){
+            if (this->contents.at(j)->getRating() > this->contents.at(j+1)->getRating()){
                 //ordena de mayor a menor por rating
-                auxiliar=this->videos.at(j);
-                this->videos.at(j)=this->videos.at(j+1);
-                this->videos.at(j+1)=auxiliar;
+                auxiliar=this->contents.at(j);
+                this->contents.at(j)=this->contents.at(j+1);
+                this->contents.at(j+1)=auxiliar;
                 
             }
                 
@@ -206,17 +206,17 @@ void Catalogue::organizeRatingAscendente(){ //metodo para ordenar videos de mayo
     }
 }//cierre de organizeAscendente
 
-void Catalogue::organizeRatingDescendente(){ //ordenar videos de menor a mayor RATING
+void Catalogue::organizeRatingDescendente(){ //ordenar contents de menor a mayor RATING
     
-    Video *auxiliar;
+    Content *auxiliar;
     
-    for (int i=0;i<this->videos.size();i++){
-        for(int j=0;j<this->videos.size()-1;j++){
-            if (this->videos.at(j)->getRating() < this->videos.at(j+1)->getRating()){
+    for (int i=0;i<this->contents.size();i++){
+        for(int j=0;j<this->contents.size()-1;j++){
+            if (this->contents.at(j)->getRating() < this->contents.at(j+1)->getRating()){
                 //ordena de mayor a menor por rating
-                auxiliar=this->videos.at(j);
-                this->videos.at(j)=this->videos.at(j+1);
-                this->videos.at(j+1)=auxiliar;
+                auxiliar=this->contents.at(j);
+                this->contents.at(j)=this->contents.at(j+1);
+                this->contents.at(j+1)=auxiliar;
                 
             }
                 
@@ -225,17 +225,15 @@ void Catalogue::organizeRatingDescendente(){ //ordenar videos de menor a mayor R
 }//cierre de organizeDescente
 
 void Catalogue::organizeRatersDescendente(){
+    Content *auxiliar;
     
-    
-    Video *auxiliar;
-    
-    for (int i=0;i<this->videos.size();i++){
-        for(int j=0;j<this->videos.size()-1;j++){
-            if (this->videos.at(j)->getRaters() < this->videos.at(j+1)->getRaters()){
+    for (int i=0;i<this->contents.size();i++){
+        for(int j=0;j<this->contents.size()-1;j++){
+            if (this->contents.at(j)->getRaters() < this->contents.at(j+1)->getRaters()){
                 //ordena de mayor a menor por NUM DE RATERS
-                auxiliar=this->videos.at(j);
-                this->videos.at(j)=this->videos.at(j+1);
-                this->videos.at(j+1)=auxiliar;
+                auxiliar=this->contents.at(j);
+                this->contents.at(j)=this->contents.at(j+1);
+                this->contents.at(j+1)=auxiliar;
                 
             }       
         }
@@ -243,15 +241,15 @@ void Catalogue::organizeRatersDescendente(){
 }//cierre de organizeRatersDescendente()
 
 void Catalogue::organizeRatersAscendente(){
-    Video *auxiliar;
+    Content *auxiliar;
     
-    for (int i=0;i<this->videos.size();i++){
-        for(int j=0;j<this->videos.size()-1;j++){
-            if (this->videos.at(j)->getRaters() > this->videos.at(j+1)->getRaters()){
+    for (int i=0;i<this->contents.size();i++){
+        for(int j=0;j<this->contents.size()-1;j++){
+            if (this->contents.at(j)->getRaters() > this->contents.at(j+1)->getRaters()){
                 //ordena de menor a mayor por NUM DE RATERS
-                auxiliar=this->videos.at(j);
-                this->videos.at(j)=this->videos.at(j+1);
-                this->videos.at(j+1)=auxiliar;       
+                auxiliar=this->contents.at(j);
+                this->contents.at(j)=this->contents.at(j+1);
+                this->contents.at(j+1)=auxiliar;       
             }
         }
     }
@@ -259,15 +257,15 @@ void Catalogue::organizeRatersAscendente(){
 
 void Catalogue::organizeDuracionAscendente(){
     
-    Video *auxiliar;
+    Content *auxiliar;
     
-    for (int i=0;i<this->videos.size();i++){
-        for(int j=0;j<this->videos.size()-1;j++){
-            if (this->videos.at(j)->getDuration() > this->videos.at(j+1)->getDuration()){
+    for (int i=0;i<this->contents.size();i++){
+        for(int j=0;j<this->contents.size()-1;j++){
+            if (this->contents.at(j)->getDuration() > this->contents.at(j+1)->getDuration()){
                 //ordena de menor a mayor por DURACION
-                auxiliar=this->videos.at(j);
-                this->videos.at(j)=this->videos.at(j+1);
-                this->videos.at(j+1)=auxiliar;
+                auxiliar=this->contents.at(j);
+                this->contents.at(j)=this->contents.at(j+1);
+                this->contents.at(j+1)=auxiliar;
                 
             }            
         }
@@ -275,31 +273,31 @@ void Catalogue::organizeDuracionAscendente(){
 } // cierre organizeDuracionAscendente()
 
 void Catalogue::organizeDuracionDescendente(){
-    Video *auxiliar;
+    Content *auxiliar;
     
-    for (int i=0;i<this->videos.size();i++){
-        for(int j=0;j<this->videos.size()-1;j++){
-            if (this->videos.at(j)->getDuration() < this->videos.at(j+1)->getDuration()){
+    for (int i=0;i<this->contents.size();i++){
+        for(int j=0;j<this->contents.size()-1;j++){
+            if (this->contents.at(j)->getDuration() < this->contents.at(j+1)->getDuration()){
                 //ordena de mayor a menor por DURACION
-                auxiliar=this->videos.at(j);
-                this->videos.at(j)=this->videos.at(j+1);
-                this->videos.at(j+1)=auxiliar;
+                auxiliar=this->contents.at(j);
+                this->contents.at(j)=this->contents.at(j+1);
+                this->contents.at(j+1)=auxiliar;
                 
             }         
         }
     }
 } //cierre organizeDuracionDescendente()
 
-vector<Video*> Catalogue::toSimpleVector()
+vector<Content*> Catalogue::toSimpleVector()
 {
-    vector<Video*> simpleVector;
-    vector<Video*>::iterator itVideos;
-    for(itVideos = videos.begin(); itVideos != videos.end(); itVideos++){
-        string videoType = ((*itVideos) -> getID()).substr(0, 1);
-        if(videoType == "P"){
-            simpleVector.push_back(*itVideos);
+    vector<Content*> simpleVector;
+    vector<Content*>::iterator itcontents;
+    for(itcontents = contents.begin(); itcontents != contents.end(); itcontents++){
+        string contentType = ((*itcontents) -> getID()).substr(0, 1);
+        if(contentType == "P"){
+            simpleVector.push_back(*itcontents);
         }else{
-            Serie* series = static_cast<Serie*>(&*(*itVideos));
+            Serie* series = static_cast<Serie*>(&*(*itcontents));
             vector<vector<Episode*> > seriesEpisodes = series -> getEpisodes();
             vector<vector<Episode*> >::iterator itSeasons;
             vector<Episode*>::iterator itEpisodes;
