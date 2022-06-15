@@ -286,7 +286,64 @@ int main()
         }
         else if (optionNum == 5)
         {
-            ;
+            vector<Video*> simpleVector = c1 -> toSimpleVector();
+            vector<Video*>::iterator it;
+            vector<string>::iterator itSeries;
+            vector<string> seriesVector;
+            string videoType;
+
+            // Obtenemos todas las sreies que hay en la base de datos
+            for(it = simpleVector.begin(); it != simpleVector.end(); it++){
+                videoType = ((*it) -> getID()).substr(0, 1);
+                if(videoType == "S"){
+                    seriesVector.push_back((*it)->getName());
+                }
+            }
+
+            // Eliminamos duplicados en vector
+            sort(seriesVector.begin(), seriesVector.end() );
+            seriesVector.erase( unique( seriesVector.begin(), seriesVector.end() ), seriesVector.end());
+
+            // Imprimimos los generos existentes
+            cout << "Options: " << endl;
+            int index = 1;
+            for(itSeries = seriesVector.begin(); itSeries != seriesVector.end(); itSeries++){
+                cout << "\t" << index << ") " << (*itSeries) << endl;
+                index += 1;
+            }
+
+            // definimos la serie a analizar
+            string option;
+            int optionInt;
+            cout << "[*] Genre selected: ";
+            cin >> option;
+            optionInt = string2int(option, 1, index);
+
+            // definimos los ratings superior en inferior
+            string lowerBound, upperBound;
+            float lowerBoundFloat, upperBoundFloat;
+            cout << "[*] Input the Rating lower bound: ";
+
+            cin >> lowerBound;
+
+            lowerBoundFloat = string2float(lowerBound, 1.0f, 5.0f);
+
+            cout << "[*] Input the Rating upper bound: ";
+
+            cin >> upperBound;
+
+            upperBoundFloat = string2float(upperBound, lowerBoundFloat, 5.0f);
+
+            string currentVideoName;
+            float currentVideoRating;
+            // Recorrempos simpleVector y buscamos videos con las características establecidas
+            for(it = simpleVector.begin(); it != simpleVector.end(); it++){
+                currentVideoName = (*it)->getName();
+                currentVideoRating = (*it)->getRating();
+                if(currentVideoName == seriesVector[optionInt - 1] && (currentVideoRating <= upperBoundFloat && currentVideoRating >= lowerBoundFloat)){
+                    cout << (*it)->toString() << endl;
+                }
+            }
         }
         else if (optionNum == 6)
         {
