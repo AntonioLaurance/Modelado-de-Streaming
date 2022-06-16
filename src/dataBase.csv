@@ -1,62 +1,219 @@
 index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers
-1,movie,El Lobo de Wallstreet,123,Action,4.790000,264
-2,movie,Mi Villano Favorito,63,Comedy,3.320000,188
-3,movie,Lluvia de Hamburguesas,90,Action,4.760000,63
-4,movie,Jurassic Park,147,Action,2.070000,87
-5,movie,Intensamente,92,Kids,2.370000,191
-6,movie,Transformers,127,Action,1.650000,273
-7,movie,Space Jam,90,Comedy,3.510000,262
-8,movie,Turning Red,85,Comedy,1.970000,184
-9,movie,The Parent Trap,105,Comedy,2.400000,298
-10,movie,The Beach,95,Mistery,2.270000,170
-11,series,Breaking Bad,50,Action,4.570000,173,Pilot,1
-12,series,Breaking Bad,51,Action,3.340000,148,Cat's in the Bag...,1
-13,series,Breaking Bad,28,Action,2.970000,174,...and the Bag's in the River,1
-14,series,Breaking Bad,36,Action,3.270000,103,Cancer Man,2
-15,series,Breaking Bad,46,Action,1.700000,200,Gray Matter,2
-16,series,Breaking Bad,45,Action,2.550000,223,Crazy Handful of Nothin',2
-17,series,Breaking Bad,56,Action,3.790000,268,A No-Rough-Stuff-Type Deal,3
-18,series,Breaking Bad,45,Action,1.350000,258,Seven Thirty-Seven,3
-19,series,Breaking Bad,38,Action,3.860000,26,Grilled,3
-20,series,Breaking Bad,42,Action,3.200000,173,Bit by a Dead Bee,4
-21,series,Breaking Bad,34,Action,4.820000,250,Down,4
-22,series,Breaking Bad,42,Action,3.240000,224,Breakage,4
-23,series,Breaking Bad,37,Action,2.370000,82,Peekaboo,5
-24,series,Breaking Bad,25,Action,3.120000,259,Negro y Azul,5
-25,series,Breaking Bad,51,Action,1.080000,237,Better Call Saul,5
-26,series,Breaking Bad,58,Action,4.980000,169,4 Days Out,6
-27,series,Breaking Bad,36,Action,3.400000,270,Over,6
-28,series,Breaking Bad,47,Action,1.840000,187,Mandala,6
-29,series,Breaking Bad,43,Action,4.980000,174,Phoenix,7
-30,series,Breaking Bad,30,Action,2.090000,109,ABQ,7
-31,series,Bones,37,Drama,3.630000,127,Pilot,1
-32,series,Bones,42,Drama,3.330000,148,The Man in the S.U.V.,1
-33,series,Bones,60,Drama,1.610000,76,A Boy in a Tree,1
-34,series,Bones,49,Drama,4.130000,67,The Man in the Bear,2
-35,series,Bones,44,Drama,4.330000,53,A Boy in a Bush,2
-36,series,Bones,43,Drama,4.920000,140,The Man in the Wall,2
-37,series,Bones,29,Drama,1.620000,299,A Man on Death Row,3
-38,series,Bones,36,Drama,4.850000,24,The Girl in the Fridge,3
-39,series,Bones,42,Drama,3.500000,169,The Man in the Fallout Shelter,3
-40,series,Bones,53,Drama,3.170000,295,The Woman at the Airport,4
-41,series,Bones,51,Drama,3.640000,147,The Woman in the Car,4
-42,series,Bones,35,Drama,3.980000,268,The Superhero in the Alley,4
-43,series,Bones,43,Drama,1.400000,250,The Woman in the Garden,5
-44,series,Bones,28,Drama,3.450000,256,The Man on the Fairway,5
-45,series,Bones,25,Drama,4.090000,34,Two Bodies in the Lab,5
-46,series,Bones,54,Drama,1.640000,50,The Woman in the Tunnel,6
-47,series,Bones,29,Drama,3.650000,154,The Skull in the Desert,6
-48,series,Bones,31,Drama,4.190000,45,The Man with the Bone,6
-49,series,Bones,41,Drama,1.520000,59,The Man in the Morgue,7
-50,series,Bones,59,Drama,1.780000,192,The Graft in the Girl,7
-51,series,Bones,34,Drama,2.520000,144,The Soldier on the Grave,7
-52,series,Bones,32,Drama,2.660000,286,The Woman in Limbo,8
-53,series,Squid Game,47,Mistery,4.670000,281,Mugunghwa kkoch-i pideon nal,1
-54,series,Squid Game,37,Mistery,1.430000,52,Ji-ok,1
-55,series,Squid Game,30,Mistery,1.130000,204,Usan-eul sseun namja,1
-56,series,Squid Game,42,Mistery,1.830000,41,Jjollyeodo pyeonmeokgi,1
-57,series,Squid Game,55,Mistery,1.970000,159,Pyeongdeung-han sesang,1
-58,series,Squid Game,36,Mistery,2.280000,39,Kkanbu,1
-59,series,Squid Game,32,Mistery,1.270000,287,VIPS,1
-60,series,Squid Game,50,Mistery,1.990000,114,Peulonteu maen,1
-61,series,Squid Game,31,Mistery,3.770000,259,Unsu joeun nal,1
+1,movie,El Lobo de Wallstreet,123,Action,4.300000,1246
+2,movie,Mi Villano Favorito,63,Comedy,2.520000,6632
+3,movie,Lluvia de Hamburguesas,90,Action,4.609826,14938
+4,movie,Jurassic Park,147,Action,1.690000,32234
+5,movie,Intensamente,92,Kids,4.820000,23523
+6,movie,Transformers,127,Action,4.090000,457457
+7,movie,Space Jam,90,Comedy,1.570000,141
+8,movie,Turning Red,85,Comedy,4.630000,35235
+9,movie,The Parent Trap,105,Comedy,4.960000,43463
+10,movie,The Beach,95,Mistery,3.550000,25254
+11,series,Breaking Bad,43,Action,2.000000,6645454,Pilot,1
+12,series,Breaking Bad,43,Action,1.880000,5568548,Cat's in the Bag...,1
+13,series,Breaking Bad,26,Action,2.500000,2357546,...and the Bag's in the River,1
+14,series,Breaking Bad,33,Action,2.370000,5745734,Cancer Man,2
+15,series,Breaking Bad,70,Action,4.120000,2553452,Gray Matter,2
+16,series,Breaking Bad,73,Action,4.500000,2456453,Crazy Handful of Nothin',2
+17,series,Breaking Bad,52,Action,2.390000,1564357,A No-Rough-Stuff-Type Deal,3
+18,series,Breaking Bad,36,Action,1.520000,2345345,Seven Thirty-Seven,3
+19,series,Breaking Bad,49,Action,3.230000,8735353,Grilled,3
+20,series,Breaking Bad,58,Action,2.370000,4634623,Bit by a Dead Bee,4
+21,series,Breaking Bad,60,Action,2.880000,7825324,Down,4
+22,series,Breaking Bad,63,Action,3.850000,8679533,Breakage,4
+23,series,Breaking Bad,56,Action,1.420000,8474745,Peekaboo,5
+24,series,Breaking Bad,47,Action,2.890000,5657437,Negro y Azul,5
+25,series,Breaking Bad,65,Action,1.920000,4745745,Better Call Saul,5
+26,series,Breaking Bad,59,Action,1.740000,6634534,4 Days Out,6
+27,series,Breaking Bad,32,Action,3.260000,5463464,Over,6
+28,series,Breaking Bad,71,Action,2.850000,2364573,Mandala,6
+29,series,Breaking Bad,35,Action,3.020000,3345253,Phoenix,7
+30,series,Breaking Bad,64,Action,3.890000,2424634,ABQ,7
+31,series,Bones,65,Drama,3.030000,3322727,Pilot,1
+32,series,Bones,27,Drama,4.680000,2784274,The Man in the S.U.V.,1
+33,series,Bones,50,Drama,4.050000,1178773,A Boy in a Tree,1
+34,series,Bones,59,Drama,2.420000,2872867,The Man in the Bear,2
+35,series,Bones,42,Drama,2.080000,1276726,A Boy in a Bush,2
+36,series,Bones,57,Drama,2.870000,1228226,The Man in the Wall,2
+37,series,Bones,60,Drama,3.850000,782178,A Man on Death Row,3
+38,series,Bones,37,Drama,2.530000,1172672,The Girl in the Fridge,3
+39,series,Bones,72,Drama,2.390000,4367676,The Man in the Fallout Shelter,3
+40,series,Bones,26,Drama,2.840000,2317311,The Woman at the Airport,4
+41,series,Bones,44,Drama,2.830000,3912662,The Woman in the Car,4
+42,series,Bones,25,Drama,4.250000,4339766,The Superhero in the Alley,4
+43,series,Bones,70,Drama,1.350000,4237372,The Woman in the Garden,5
+44,series,Bones,55,Drama,3.180000,2828718,The Man on the Fairway,5
+45,series,Bones,43,Drama,4.660000,2372872,Two Bodies in the Lab,5
+46,series,Bones,73,Drama,1.900000,3317267,The Woman in the Tunnel,6
+47,series,Bones,47,Drama,1.530000,2731732,The Skull in the Desert,6
+48,series,Bones,71,Drama,2.960000,1182286,The Man with the Bone,6
+49,series,Bones,34,Drama,4.430000,1672626,The Man in the Morgue,7
+50,series,Bones,74,Drama,4.470000,1212317,The Graft in the Girl,7
+51,series,Bones,53,Drama,3.640000,1661363,The Soldier on the Grave,7
+52,series,Bones,74,Drama,4.510000,1392137,The Woman in Limbo,8
+53,series,Squid Game,39,Mistery,3.990000,3830178,Mugunghwa kkoch-i pideon nal,1
+54,series,Squid Game,50,Mistery,4.560000,3684678,Ji-ok,1
+55,series,Squid Game,33,Mistery,3.480000,2346534,Usan-eul sseun namja,1
+56,series,Squid Game,42,Mistery,1.150000,3518016,Jjollyeodo pyeonmeokgi,1
+57,series,Squid Game,43,Mistery,3.260000,13103028,Pyeongdeung-han sesang,1
+58,series,Squid Game,32,Mistery,1.340000,6951933,Kkanbu,1
+59,series,Squid Game,70,Mistery,3.540000,11737986,VIPS,1
+60,series,Squid Game,55,Mistery,1.400000,13019298,Peulonteu maen,1
+61,series,Squid Game,31,Mistery,1.790000,12712116,Unsu joeun nal,1
+62,series,The Simpsons,74,Comedy,4.430000,1511,Homer�s Night Out,1
+63,series,The Simpsons,58,Comedy,3.480000,1716,Krusty Gets Busted,1
+64,series,The Simpsons,48,Comedy,4.480000,1638,The Call of the Simpsons,1
+65,series,The Simpsons,45,Comedy,3.470000,1638,Bart Gets an �F�,2
+66,series,The Simpsons,42,Comedy,4.560000,1457,Two Cars in Every Garage and Three Eyes on Every Fish,2
+67,series,The Simpsons,44,Comedy,2.570000,1366,Dead Putting Society,2
+68,series,The Simpsons,65,Comedy,4.840000,1522,Bart the Daredevil,2
+69,series,The Simpsons,33,Comedy,2.890000,1340,Bart Gets Hit by a Car,2
+70,series,The Simpsons,44,Comedy,3.260000,1329,Homer vs.�Lisa and the 8th Commandment,2
+71,series,The Simpsons,58,Comedy,3.800000,1413,"Oh Brother,0
+72,series,The Simpsons,64,Comedy,4.660000,1243,Old Money,2
+73,series,The Simpsons,36,Comedy,4.920000,1684,Lisa�s Substitute,2
+74,series,The Simpsons,45,Comedy,2.850000,1223,Blood Feud,2
+75,series,The Simpsons,66,Comedy,4.730000,1687,One Fish",0
+76,series,The Simpsons,25,Comedy,3.320000,1274,Mr.�Lisa Goes to Washington,3
+77,series,The Simpsons,49,Comedy,3.860000,1446,Bart the Murderer,3
+78,series,The Simpsons,44,Comedy,1.720000,1262,"Like Father,0
+79,series,The Simpsons,52,Comedy,3.950000,1194,Saturdays of Thunder,3
+80,series,The Simpsons,50,Comedy,3.030000,1291,Burns Verkaufen der Kraftwerk,3
+81,series,The Simpsons,28,Comedy,4.650000,1365,Radio Bart,3
+82,series,The Simpsons,48,Comedy,1.060000,1272,Bart the Lover,3
+83,series,The Simpsons,70,Comedy,3.780000,1201,Separate Vocations,3
+84,series,The Simpsons,42,Comedy,4.690000,1233,Colonel Homer,3
+85,series,The Simpsons,31,Comedy,2.800000,1160,Bart�s Friend Falls in Love,3
+86,series,The Simpsons,34,Comedy,1.550000,1414,Kamp Krusty,4
+87,series,The Simpsons,72,Comedy,3.020000,1293,Itchy & Scratchy: The Movie,4
+88,series,The Simpsons,54,Comedy,2.660000,1350,Lisa�s First Word,4
+89,series,The Simpsons,56,Comedy,4.670000,1153,Selma�s Choice,4
+90,series,The Simpsons,48,Comedy,3.070000,1080,Marge in Chains,4
+91,series,The Simpsons,47,Comedy,3.490000,1416,Homer�s Barbershop Quartet,5
+92,series,The Simpsons,61,Comedy,3.690000,1476,Homer Goes to College,5
+93,movie,Clear and Present Danger,142,Terror,4.400000,5061
+94,movie,Deep Blue Sea,105,Drama,3.910000,3822
+95,movie,I'm Leaving Now,75,Comedy,3.020000,4338
+96,movie,Total Recall,114,Action,4.950000,3786
+97,movie,After the Raid,25,Mistery,3.210000,3582
+98,movie,Birders,38,Mistery,2.250000,3873
+99,movie,A Tale of Two Kitchens,30,Terror,1.370000,4095
+100,movie,Liberated: The New Sexual Revolution,86,Drama,1.470000,3816
+101,movie,Casa de mi Padre,84,Comedy,1.300000,3603
+102,movie,Larceny,87,Terror,3.030000,3699
+103,movie,Nacho Libre,92,Comedy,3.850000,3480
+104,series,Game of Thrones,36,Drama,1.620000,2220000,Winter Is Coming,1
+105,series,Game of Thrones,64,Drama,4.640000,2200000,The Kingsroad,1
+106,series,Game of Thrones,63,Drama,2.970000,2440000,Lord Snow,1
+107,series,Game of Thrones,53,Drama,3.800000,2450000,Cripples",0
+108,series,Game of Thrones,53,Drama,3.190000,2580000,The Wolf and the Lion,1
+109,series,Game of Thrones,33,Drama,4.300000,2440000,A Golden Crown,1
+110,series,Game of Thrones,53,Drama,2.840000,2400000,You Win or You Die,1
+111,series,Game of Thrones,27,Drama,4.620000,2720000,The Pointy End,1
+112,series,Game of Thrones,29,Drama,4.990000,2660000,Baelor,1
+113,series,Game of Thrones,70,Drama,2.140000,3040000,Fire and Blood,1
+114,series,Game of Thrones,48,Drama,3.620000,3860000,The North Remembers,2
+115,series,Game of Thrones,65,Drama,3.420000,3760000,The Night Lands,2
+116,series,Game of Thrones,65,Drama,2.250000,3770000,What Is Dead May Never Die,2
+117,series,Game of Thrones,60,Drama,3.900000,3650000,Garden of Bones,2
+118,series,Game of Thrones,27,Drama,2.730000,3900000,The Ghost of Harrenhal,2
+119,series,Game of Thrones,25,Drama,2.710000,3880000,The Old Gods and the New,2
+120,series,Game of Thrones,71,Drama,1.480000,3690000,A Man Without Honor,2
+121,series,Game of Thrones,25,Drama,3.030000,3860000,The Prince of Winterfell,2
+122,series,Game of Thrones,33,Drama,2.370000,3380000,Blackwater,2
+123,series,Game of Thrones,60,Drama,4.250000,4200000,Valar Morghulis,2
+124,series,Game of Thrones,36,Drama,1.960000,4370000,Valar Dohaeris,3
+125,series,Game of Thrones,55,Drama,2.830000,4270000,"Dark Wings,0
+126,series,Game of Thrones,52,Drama,3.660000,4720000,Walk of Punishment,3
+127,series,Game of Thrones,32,Drama,4.870000,4870000,And Now His Watch Is Ended,3
+128,series,Game of Thrones,57,Drama,1.350000,5350000,Kissed by Fire,3
+129,series,Game of Thrones,28,Drama,3.960000,5500000,The Climb,3
+130,series,Game of Thrones,60,Drama,1.130000,4840000,The Bear and the Maiden Fair,3
+131,series,Game of Thrones,45,Drama,4.820000,5130000,Second Sons,3
+132,series,Game of Thrones,42,Drama,1.890000,5220000,The Rains of Castamere,3
+133,series,Game of Thrones,33,Drama,2.190000,5390000,Mhysa,3
+134,series,Game of Thrones,30,Drama,2.480000,6640000,Two Swords,4
+135,series,Game of Thrones,55,Drama,4.730000,6310000,The Lion and the Rose,4
+136,series,Game of Thrones,60,Drama,1.580000,6590000,Breaker of Chains,4
+137,series,Game of Thrones,65,Drama,1.740000,6950000,Oathkeeper,4
+138,series,Game of Thrones,34,Drama,4.100000,7160000,First of His Name,4
+139,series,Game of Thrones,49,Drama,4.810000,6400000,The Laws of Gods and Men,4
+140,series,Game of Thrones,48,Drama,3.010000,7200000,Mockingbird,4
+141,series,Game of Thrones,28,Drama,1.100000,7170000,The Mountain and the Viper,4
+142,series,Game of Thrones,62,Drama,3.210000,6950000,The Watchers on the Wall,4
+143,series,Game of Thrones,46,Drama,2.190000,7090000,The Children,4
+144,series,Game of Thrones,58,Drama,4.300000,8000000,The Wars to Come,5
+145,series,Game of Thrones,33,Drama,2.290000,6810000,The House of Black and White,5
+146,series,Game of Thrones,51,Drama,3.230000,6710000,High Sparrow,5
+147,series,Game of Thrones,60,Drama,2.300000,6820000,Sons of the Harpy,5
+148,series,Game of Thrones,56,Drama,2.340000,6560000,Kill the Boy,5
+149,series,Game of Thrones,29,Drama,3.010000,6240000,Unbowed",0
+150,series,Game of Thrones,59,Drama,2.590000,5400000,The Gift,5
+151,series,Game of Thrones,52,Drama,4.520000,7010000,Hardhome,5
+152,series,Game of Thrones,64,Drama,1.030000,7140000,The Dance of Dragons,5
+153,series,Game of Thrones,73,Drama,2.240000,8110000,Mother's Mercy,5
+154,series,Game of Thrones,67,Drama,3.340000,7940000,The Red Woman,6
+155,series,Game of Thrones,58,Drama,4.400000,7290000,Home,6
+156,series,Game of Thrones,44,Drama,3.490000,7280000,Oathbreaker,6
+157,series,Game of Thrones,51,Drama,1.590000,7820000,Book of the Stranger,6
+158,series,Game of Thrones,50,Drama,3.820000,7890000,The Door,6
+159,series,Game of Thrones,26,Drama,3.910000,6710000,Blood of My Blood,6
+160,series,Game of Thrones,71,Drama,1.460000,7800000,The Broken Man,6
+161,series,Game of Thrones,68,Drama,2.590000,7600000,No One,6
+162,series,Game of Thrones,71,Drama,2.020000,7660000,Battle of the Bastards,6
+163,series,Game of Thrones,53,Drama,4.940000,8890000,The Winds of Winter,6
+164,series,Game of Thrones,55,Drama,2.180000,10110000,Dragonstone,7
+165,series,Game of Thrones,67,Drama,3.170000,9270000,Stormborn,7
+166,series,Game of Thrones,52,Drama,3.980000,9250000,The Queen's Justice,7
+167,series,Game of Thrones,53,Drama,2.760000,10170000,The Spoils of War,7
+168,series,Game of Thrones,59,Drama,2.600000,10720000,Eastwatch,7
+169,series,Game of Thrones,63,Drama,2.780000,10240000,Beyond the Wall,7
+170,series,Game of Thrones,74,Drama,3.790000,12070000,The Dragon and the Wolf,7
+171,series,Game of Thrones,33,Drama,3.110000,11760000,Winterfell,8
+172,series,Game of Thrones,52,Drama,1.190000,10290000,A Knight of the Seven Kingdoms,8
+173,series,Game of Thrones,35,Drama,2.480000,12020000,The Long Night,8
+174,series,Game of Thrones,55,Drama,2.060000,11800000,The Last of the Starks,8
+175,series,Game of Thrones,45,Drama,3.120000,12480000,The Bells,8
+176,series,Game of Thrones,52,Drama,1.490000,13610000,The Iron Throne,8
+177,movie,The Shawshank Redemption,142,Drama,2.960000,2343110
+178,movie,The Godfather,175,Drama,1.750000,1620367
+179,movie,The Dark Knight,152,Action,2.100000,2303232
+180,movie,The Godfather: Part II,202,Drama,1.230000,1129952
+181,movie,12 Angry Men,96,Drama,2.740000,689845
+182,movie,The Lord of the Rings: The Return of the King,201,Action,3.750000,1642758
+183,movie,Pulp Fiction,154,Action,1.500000,1826188
+184,movie,Schindler's List,195,Drama,1.250000,1213505
+185,movie,Inception,148,Action,2.970000,2067042
+186,movie,Fight Club,139,Drama,2.030000,1854740
+187,movie,The Lord of the Rings: The Fellowship of the Ring,178,Action,1.730000,1661481
+188,movie,Forrest Gump,142,Drama,3.540000,1809221
+189,movie,Il buono,161,Action,3.840000,1147794
+190,movie,The Lord of the Rings: The Two Towers,179,Action,1.080000,1485555
+191,movie,The Matrix,136,Action,1.810000,1676426
+192,movie,Goodfellas,146,Drama,3.290000,1020727
+193,movie,Star Wars: Episode V - The Empire Strikes Back,124,Action,4.050000,1159315
+194,movie,One Flew Over the Cuckoo's Nest,133,Drama,4.980000,918088
+195,movie,Hamilton,160,Drama,1.020000,55291
+196,movie,Gisaengchung,132,Comedy,2.980000,552778
+197,movie,Soorarai Pottru,153,Drama,2.510000,54995
+198,movie,Interstellar,169,Adventure,1.860000,1512360
+199,movie,Cidade de Deus,130,Crime,3.840000,699256
+200,movie,Sen to Chihiro no kamikakushi,125,Animation,4.450000,651376
+201,movie,Saving Private Ryan,169,Drama,1.390000,1235804
+202,movie,The Green Mile,189,Crime,4.990000,1147794
+203,movie,La vita è bella,116,Comedy,1.550000,623629
+204,movie,Se7en,127,Crime,1.630000,1445096
+205,movie,The Silence of the Lambs,118,Crime,2.910000,1270197
+206,movie,Star Wars,121,Action,1.340000,1231473
+207,movie,Seppuku,133,Action,3.390000,42004
+208,movie,Shichinin no samurai,207,Action,2.440000,315744
+209,movie,It's a Wonderful Life,130,Drama,3.500000,405801
+210,movie,Joker,122,Crime,2.180000,939252
+211,movie,Whiplash,106,Drama,2.670000,717585
+212,movie,The Intouchables,112,Comedy,1.230000,760360
+213,movie,The Prestige,130,Drama,3.830000,1190259
+214,movie,The Departed,151,Crime,4.220000,1189773
+215,movie,The Pianist,150,Drama,3.290000,729603
+216,movie,Gladiator,155,Action,2.850000,1341460
+217,movie,American History X,119,Drama,1.610000,1034705
+218,movie,The Usual Suspects,106,Crime,2.350000,991208
