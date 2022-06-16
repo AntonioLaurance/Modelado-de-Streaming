@@ -19,7 +19,7 @@ class Serie : public Content
     public:
         // Constructor and Destructor Method
         Serie();
-        Serie(string ID, string name, string genre,  vector<vector<Episode*> > episodes);
+        Serie(string ID, string name, string genre, vector<vector<Episode*> > episodes);
         ~Serie();
 
         // Getter method for the array of arrays of episodes
