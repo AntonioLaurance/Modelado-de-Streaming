@@ -241,7 +241,7 @@ int main()
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
                 contentRating = (*it)->getRating();
                 if(contentRating <= upperBoundFloat && contentRating >= lowerBoundFloat){
-                    txt +=  (*it)->toString() + "\n";
+                    txt += (*it)->toString() + "\n";
                 }
             }
 
@@ -288,7 +288,7 @@ int main()
             for(it = simpleVector.begin(); it != simpleVector.end(); it++){
                 contentGenre = (*it)->getGenre();
                 if(contentGenre == genreVector[optionInt - 1]){
-                    txt +=  (*it)->toString() + "\n";
+                    txt += (*it) -> toString() + "\n";
                 }
             }
 

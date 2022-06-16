@@ -2,7 +2,7 @@ index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers
 1,movie,El Lobo de Wallstreet,123,Action,4.300000,1246
 2,movie,Mi Villano Favorito,63,Comedy,2.520000,6632
 3,movie,Lluvia de Hamburguesas,90,Action,4.609826,14938
-4,movie,Jurassic Park,147,Action,1.690000,32234
+4,movie,Jurassic Park,147,Action,1.690041,32235
 5,movie,Intensamente,92,Kids,4.820000,23523
 6,movie,Transformers,127,Action,4.090000,457457
 7,movie,Space Jam,90,Comedy,1.570000,141
@@ -101,7 +101,7 @@ index,type,name,duartion,genre,rating,raters,episodeTitles,seasonNumbers
 100,movie,Liberated: The New Sexual Revolution,86,Drama,1.470000,3816
 101,movie,Casa de mi Padre,84,Comedy,1.300000,3603
 102,movie,Larceny,87,Terror,3.030000,3699
-103,movie,Nacho Libre,92,Comedy,3.850000,3480
+103,movie,Nacho Libre,92,Comedy,3.850043,3481
 104,series,Game of Thrones,36,Drama,1.620000,2220000,Winter Is Coming,1
 105,series,Game of Thrones,64,Drama,4.640000,2200000,The Kingsroad,1
 106,series,Game of Thrones,63,Drama,2.970000,2440000,Lord Snow,1
